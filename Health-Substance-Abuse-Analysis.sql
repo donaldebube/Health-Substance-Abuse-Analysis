@@ -5,14 +5,6 @@ SELECT CONVERT(DATE, [Admission Date]), MONTH([Admission Date]), DATENAME(MONTH,
 FROM SubstanceAbuseProgramme
 GO
 
--- For Analysis Purpose
-SELECT DISTINCT Gender, COUNT(Gender) AS [Total Count]
-FROM SubstanceAbuseProgramme
-GROUP BY Gender
-
--- Get the avaerage, max, min of the DLA1 and DLA2.
-
-
 -- Clean the data
 
 -- Change Column names
@@ -136,6 +128,13 @@ SET
     [Race Ethnicity] = 'White alone non-Hispanic'
 WHERE [Race Ethnicity] = 'NonHispWhite'
 
+
+
+-- For Analysis Purpose
+SELECT DISTINCT Gender, COUNT(Gender) AS [Total Count]
+FROM SubstanceAbuseProgramme
+GROUP BY Gender
+
 -- Here, we can see that the month of February had the highest number of admissions.
 SELECT DISTINCT 
     TOP 10 [Admission Date], 
@@ -144,6 +143,12 @@ SELECT DISTINCT
 FROM SubstanceAbuseProgramme
 GROUP BY [Admission Date]
 ORDER BY [COUNT] DESC
+
+-- Get the avaerage, max, min of the DLA1 and DLA2.
+
+
+
+
 
 
 
