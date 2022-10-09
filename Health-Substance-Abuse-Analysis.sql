@@ -17,6 +17,10 @@ GROUP BY Gender
 SELECT DISTINCT [Admission Date]
 FROM SubstanceAbuseProgramme
 
+-- Create an Age Range for Analysis Purpose
+SELECT DISTINCT Age
+FROM SubstanceAbuseProgramme
+
 -- Correct the names of the race ethnicity and update in the table
 SELECT DISTINCT RaceEthnicity
 FROM SubstanceAbuseProgramme
@@ -75,10 +79,9 @@ WHERE Gender = 'F'
 
 -- Replace the Null values with 0 because null is giving a count of 0, which is incorrect
 UPDATE SubstanceAbuseProgramme
-SET MedDx = CAST(MedDx AS numeric)
---WHERE MedDx = 'NULL'
-
-UPDATE SubstanceAbuseProgramme
 SET MedDx = 0
 WHERE MedDx = 6
 
+-- Create an Age Range for Analysis Purpose
+SELECT DISTINCT Age
+FROM SubstanceAbuseProgramme
