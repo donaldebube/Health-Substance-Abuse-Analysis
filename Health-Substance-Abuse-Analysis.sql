@@ -137,6 +137,15 @@ SET
 WHERE [Race Ethnicity] = 'NonHispWhite'
 
 -- Here, we can see that the month of February had the highest number of admissions.
+SELECT DISTINCT 
+    TOP 10 [Admission Date], 
+    DATENAME(MONTH, ([Admission Date])), 
+    COUNT([Admission Date]) AS COUNT
+FROM SubstanceAbuseProgramme
+GROUP BY [Admission Date]
+ORDER BY [COUNT] DESC
+
+
 
 -- SELECT DISTINCT TOP 10 [Admission Date], DATENAME(MONTH, ([Admission Date])) AS MONTH, COUNT([Admission Date]) AS COUNT
 -- FROM SubstanceAbuseProgramme
@@ -147,8 +156,5 @@ WHERE [Race Ethnicity] = 'NonHispWhite'
 --     DATENAME(MONTH, ([Admission Date])) = 'March'
 -- ORDER BY [COUNT] DESC
 
-SELECT DISTINCT TOP 10 [Admission Date], DATENAME(MONTH, ([Admission Date])), COUNT([Admission Date]) AS COUNT
-FROM SubstanceAbuseProgramme
-GROUP BY [Admission Date]
-ORDER BY [COUNT] DESC
+
 
