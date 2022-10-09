@@ -102,7 +102,7 @@ GO
 UPDATE SubstanceAbuseProgramme
 SET
     [Age Range] = 'Teenager' 
-WHERE Age < 19 
+WHERE Age < 20
 GO
 
 -- For Young Adult Category
@@ -123,5 +123,11 @@ GO
 UPDATE SubstanceAbuseProgramme
 SET
     [Age Range] = 'Senior Citizen' 
-WHERE Age > 60
+WHERE Age >= 60
 GO
+
+-- Verify if there is any NULL value in the Age Range column
+-- There is no NULL value
+SELECT AGE, [Age Range]
+FROM SubstanceAbuseProgramme
+WHERE [Age Range] IS NULL
