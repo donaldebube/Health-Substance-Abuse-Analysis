@@ -89,5 +89,17 @@ WHERE MedDx = 6
 -- 40-59 = Adult
 -- 60 > = Senior Citizen
 
+-- Add new column
+ALTER TABLE SubstanceAbuseProgramme
+ADD [Age Range] VARCHAR(50)
+
+ALTER TABLE SubstanceAbuseProgramme
+    DROP COLUMN [Age Rnage]
+GO
+-- Insert values
+-- Update rows in table 'SubstanceAbuseProgramme'
 UPDATE SubstanceAbuseProgramme
-SET 
+SET
+    [Age Range] = 'Adult' 
+WHERE Age BETWEEN 40 AND 59 --Age BETWEEN 40 AND 59 /* add search conditions here */
+GO
