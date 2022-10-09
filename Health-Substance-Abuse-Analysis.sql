@@ -83,5 +83,11 @@ SET MedDx = 0
 WHERE MedDx = 6
 
 -- Create an Age Range for Analysis Purpose
-SELECT DISTINCT Age
-FROM SubstanceAbuseProgramme
+-- Age Range
+-- 18-19 = Teenager
+-- 20-39 = Young Adult
+-- 40-59 = Adult
+-- 60 > = Senior Citizen
+
+UPDATE SubstanceAbuseProgramme
+SET 
