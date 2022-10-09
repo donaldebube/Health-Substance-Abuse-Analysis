@@ -98,8 +98,30 @@ ALTER TABLE SubstanceAbuseProgramme
 GO
 -- Insert values
 -- Update rows in table 'SubstanceAbuseProgramme'
+-- For Teenager Category
+UPDATE SubstanceAbuseProgramme
+SET
+    [Age Range] = 'Teenager' 
+WHERE Age < 19 
+GO
+
+-- For Young Adult Category
+UPDATE SubstanceAbuseProgramme
+SET
+    [Age Range] = 'Young Adult' 
+WHERE Age BETWEEN 20 AND 39 
+GO
+
+-- For Adult Category
 UPDATE SubstanceAbuseProgramme
 SET
     [Age Range] = 'Adult' 
-WHERE Age BETWEEN 40 AND 59 --Age BETWEEN 40 AND 59 /* add search conditions here */
+WHERE Age BETWEEN 40 AND 59 
+GO
+
+-- For Senior Citizen Category
+UPDATE SubstanceAbuseProgramme
+SET
+    [Age Range] = 'Senior Citizen' 
+WHERE Age > 60
 GO
