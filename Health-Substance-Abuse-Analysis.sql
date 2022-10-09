@@ -37,3 +37,9 @@ SELECT DISTINCT MedDx
 FROM SubstanceAbuseProgramme
 
 -- Get the avaerage, max, min of the DLA1 and DLA2.
+
+
+-- UPDATE
+-- Change Column names
+EXEC sp_rename 'SubstanceAbuseProgramme.RaceEthnicity', 'Race Ethnicity' --'COLUMN'
+EXEC sp_rename 'SubstanceAbuseProgramme.PsychAdmit', 'Psych Admit' --'COLUMN'
