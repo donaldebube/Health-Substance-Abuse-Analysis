@@ -29,22 +29,26 @@ GO
 
 -- Correct the names of UsualCare to Usual Care
 UPDATE SubstanceAbuseProgramme
-SET Program = 'Usual Care'
+SET 
+    Program = 'Usual Care'
 WHERE Program = 'UsualCare'
 
 -- Replace F with Female and M with Male for better understanding.
 -- For Male
 UPDATE SubstanceAbuseProgramme
-SET Gender = 'Male' 
+SET 
+    Gender = 'Male' 
 WHERE Gender = 'M'
 -- For Female
 UPDATE SubstanceAbuseProgramme
-SET Gender = 'Female'
+SET 
+    Gender = 'Female'
 WHERE Gender = 'F'
 
 -- Replace the Null values with 0 because null is giving a count of 0, which is incorrect
 UPDATE SubstanceAbuseProgramme
-SET MedDx = 0
+SET 
+    MedDx = 0
 WHERE MedDx = 6
 
 -- Create an Age Range for Analysis Purpose
@@ -96,3 +100,41 @@ GO
 SELECT AGE, [Age Range]
 FROM SubstanceAbuseProgramme
 WHERE [Age Range] IS NULL
+
+-- Change the values present in the Race Etnicity column for clarity
+-- Hispanic = Hispanic or Latino
+-- NativeAm = Native American
+-- NonHispBlack = African American alone non-Hispanic
+-- NonHispWhite = White alone non-Hispanic
+
+-- Verification
+SELECT DISTINCT [Race Ethnicity]
+FROM SubstanceAbuseProgramme
+
+-- Update data in column
+-- For Hispanic or Latino Category 
+UPDATE SubstanceAbuseProgramme
+SET 
+    [Race Ethnicity] = 'Hispanic or Latino'
+WHERE [Race Ethnicity] = 'Hispanic'
+
+-- For Native American
+UPDATE SubstanceAbuseProgramme
+SET 
+    [Race Ethnicity] = 'Native American'
+WHERE [Race Ethnicity] = 'NativeAm'
+
+-- For African American alone non-Hispanic
+UPDATE SubstanceAbuseProgramme
+SET 
+    [Race Ethnicity] = 'African American alone non-Hispanic'
+WHERE [Race Ethnicity] = 'NonHispBlack'
+
+-- For White alone non-Hispanic
+UPDATE SubstanceAbuseProgramme
+SET 
+    [Race Ethnicity] = 'White alone non-Hispanic'
+WHERE [Race Ethnicity] = 'NonHispWhite'
+
+
+
