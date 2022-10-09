@@ -58,3 +58,8 @@ SET Program = 'Usual Care'
 WHERE Program = 'UsualCare'
 
 -- Replace F with Female and M with Male for better understanding.
+-- For Male
+UPDATE SubstanceAbuseProgramme
+SET Gender = 'Male' 
+WHERE Gender = 'M'
+
