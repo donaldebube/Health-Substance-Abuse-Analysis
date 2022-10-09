@@ -38,8 +38,9 @@ SELECT DISTINCT SUDx
 FROM SubstanceAbuseProgramme
 
 -- Replace the Null values with not given because null is giving a count of 0, which shouldnt't be possible
-SELECT DISTINCT MedDx
+SELECT DISTINCT MedDx, COUNT(MedDx)
 FROM SubstanceAbuseProgramme
+GROUP BY MedDx
 
 -- Get the avaerage, max, min of the DLA1 and DLA2.
 
@@ -71,3 +72,13 @@ WHERE Gender = 'M'
 UPDATE SubstanceAbuseProgramme
 SET Gender = 'Female'
 WHERE Gender = 'F'
+
+-- Replace the Null values with 0 because null is giving a count of 0, which is incorrect
+UPDATE SubstanceAbuseProgramme
+SET MedDx = CAST(MedDx AS numeric)
+--WHERE MedDx = 'NULL'
+
+UPDATE SubstanceAbuseProgramme
+SET MedDx = 0
+WHERE MedDx = 6
+
