@@ -5,6 +5,11 @@ SELECT CONVERT(DATE, [Admission Date]), MONTH([Admission Date]), DATENAME(MONTH,
 FROM SubstanceAbuseProgramme
 GO
 
+-- For Analysis Purpose
+SELECT DISTINCT Gender, COUNT(Gender) AS [Total Count]
+FROM SubstanceAbuseProgramme
+GROUP BY Gender
+
 
 -- Clean the data
 
@@ -62,4 +67,7 @@ WHERE Program = 'UsualCare'
 UPDATE SubstanceAbuseProgramme
 SET Gender = 'Male' 
 WHERE Gender = 'M'
-
+-- For Female
+UPDATE SubstanceAbuseProgramme
+SET Gender = 'Female'
+WHERE Gender = 'F'
