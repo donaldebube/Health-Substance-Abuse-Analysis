@@ -43,3 +43,16 @@ FROM SubstanceAbuseProgramme
 -- Change Column names
 EXEC sp_rename 'SubstanceAbuseProgramme.RaceEthnicity', 'Race Ethnicity' --'COLUMN'
 EXEC sp_rename 'SubstanceAbuseProgramme.PsychAdmit', 'Psych Admit' --'COLUMN'
+
+-- Convert the date format to show only date
+ALTER TABLE SubstanceAbuseProgramme
+ALTER COLUMN [Admission Date] DATE
+GO
+UPDATE SubstanceAbuseProgramme 
+SET [Admission Date] = CONVERT(DATE, [Admission Date], 101)
+GO
+
+-- Correct the names of UsualCare to Usual Care
+UPDATE SubstanceAbuseProgramme
+SET Program = 'Usual Care'
+WHERE Program = 'UsualCare'
