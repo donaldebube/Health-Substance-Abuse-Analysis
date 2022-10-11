@@ -152,7 +152,10 @@ ORDER BY [COUNT] DESC
 
 --  Compare different hospitalization programs.(5)
 -- What conclusion(s) can you draw from it?
-SELECT DISTINCT [Age Range]
+SELECT DISTINCT *
+FROM SubstanceAbuseProgramme
+
+SELECT Program, Gender, [Age Range]
 FROM SubstanceAbuseProgramme
 
 -- Total Count of both Usual Care and Intervention Patients
