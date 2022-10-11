@@ -153,10 +153,16 @@ SELECT Program, COUNT(Program) AS [Total Count]
 FROM SubstanceAbuseProgramme
 GROUP BY Program
 
--- Number of Usual Care Patients (Male)
+-- Number of both Usual Care and Intervention Patients (Male)
 SELECT Program, COUNT(Gender) AS [Total No of Male]
 FROM SubstanceAbuseProgramme
-WHERE Program = 'Usual Care' AND Gender = 'Male'
+WHERE Gender = 'Male' 
+GROUP BY Program, Gender
+
+-- Number of both Usual Care and Intervention Patients (Female)
+SELECT Program, COUNT(Gender) AS [Total No of Female]
+FROM SubstanceAbuseProgramme
+WHERE Gender = 'Female'
 GROUP BY Program
 
 
