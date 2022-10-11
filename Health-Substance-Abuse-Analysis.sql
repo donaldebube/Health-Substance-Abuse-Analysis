@@ -240,10 +240,19 @@ GO
 
 
 -- Number of both Usual Care and Intervention Patients by Age Range (Teenager)
-SELECT Program, COUNT([Age Range]) AS [Total No of Teenager Category]
-FROM SubstanceAbuseProgramme
-WHERE [Age Range] = 'Teenager'
-GROUP BY Program
+CREATE VIEW VWProgramByAgeRangeTeenager
+AS
+    SELECT Program, COUNT([Age Range]) AS [Total No of Teenager Category]
+    FROM SubstanceAbuseProgramme
+    WHERE [Age Range] = 'Teenager'
+    GROUP BY Program
+GO
+
+-- Run VWProgramByAgeRangeTeenager View
+SELECT *
+FROM VWProgramByAgeRangeTeenager 
+GO
+
 
 -- Number of both Usual Care and Intervention Patients by Age Range (Young Adult)
 SELECT Program, COUNT([Age Range]) AS [Total No of Young Adult Category]
