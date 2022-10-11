@@ -255,10 +255,36 @@ GO
 
 
 -- Number of both Usual Care and Intervention Patients by Age Range (Young Adult)
-SELECT Program, COUNT([Age Range]) AS [Total No of Young Adult Category]
-FROM SubstanceAbuseProgramme
-WHERE [Age Range] = 'Young Adult'
-GROUP BY Program
+CREATE VIEW VWProgramByAgeRangeYoungAdult
+AS
+    SELECT Program, COUNT([Age Range]) AS [Total No of Young Adult Category]
+    FROM SubstanceAbuseProgramme
+    WHERE [Age Range] = 'Young Adult'
+    GROUP BY Program
+GO
+
+-- Run VWProgramByAgeRangeYounGAdult View
+SELECT *
+FROM VWProgramByAgeRangeYoungAdult
+GO
+
+-- JOIN VWProgramByAgeRangeAdult, VWProgramByAgeRangeSeniorCitizen, VWProgramByAgeRangeTeenager AND VWProgramByAgeRangeYoungAdult
+SELECT 
+    A.Program,
+    A.[Total No of Adult Category],
+    SC.[Total No of Senior Citizen Category],
+    T.[Total No of Teenager Category],
+    YA.[Total No of Young Adult Category],
+    A.[Total No of Adult Category] + SC.[Total No of Senior Citizen Category] + T.[Total No of Teenager Category] + YA.[Total No of Young Adult Category] AS [Total Count]
+FROM VWProgramByAgeRangeAdult AS A
+INNER JOIN VWProgramByAgeRangeSeniorCitizen AS SC
+    ON A.Program = SC.Program
+INNER JOIN VWProgramByAgeRangeTeenager AS T
+    ON A.Program =T.Program
+INNER JOIN VWProgramByAgeRangeYoungAdult AS YA
+    ON A.Program = YA.Program
+GO
+
 
 
 --  For Race Ethnicity
