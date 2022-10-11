@@ -147,7 +147,19 @@ ORDER BY [COUNT] DESC
 --  Compare different hospitalization programs. 
 -- What conclusion(s) can you draw from it?
 SELECT *
- FROM SubstanceAbuseProgramme
+FROM SubstanceAbuseProgramme
+
+SELECT Program, COUNT(Program) AS [Total Count]
+FROM SubstanceAbuseProgramme
+GROUP BY Program
+
+-- Number of Usual Care Patients (Male)
+SELECT Program, COUNT(Gender) AS [Total No of Male]
+FROM SubstanceAbuseProgramme
+WHERE Program = 'Usual Care' AND Gender = 'Male'
+GROUP BY Program
+
+
 
 -- Get the avaerage, max, min of the DLA1 and DLA2.
 
