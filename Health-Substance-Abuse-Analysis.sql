@@ -155,6 +155,7 @@ ORDER BY [COUNT] DESC
 SELECT DISTINCT *
 FROM SubstanceAbuseProgramme
 
+-- Total Insight
 SELECT Program, Gender, [Age Range]
 FROM SubstanceAbuseProgramme
 
@@ -193,13 +194,37 @@ FROM SubstanceAbuseProgramme
 WHERE [Age Range] = 'Teenager'
 GROUP BY Program
 
--- Number of both Usual Care and Intervention Patients by Age Range (Teenager)
+-- Number of both Usual Care and Intervention Patients by Age Range (Young Adult)
 SELECT Program, COUNT([Age Range]) AS [Total No of Young Adult Category]
 FROM SubstanceAbuseProgramme
 WHERE [Age Range] = 'Young Adult'
 GROUP BY Program
 
+
+--  For Race Ethnicity
+SELECT DISTINCT [Race Ethnicity], COUNT([Race Ethnicity]) AS [Total Count]
+FROM SubstanceAbuseProgramme
+GROUP BY [Race Ethnicity]
+
+SELECT DISTINCT [Race Ethnicity], COUNT(Gender) AS [Male Count]
+FROM SubstanceAbuseProgramme
+WHERE Gender = 'Male'
+GROUP BY [Race Ethnicity]
+GO
 -- Get the avaerage, max, min of the DLA1 and DLA2.
+
+-- Create View For Just Male Gender in the Race Ethnicity Column
+CREATE VIEW VWRaceEthnicityMale
+AS
+    SELECT DISTINCT [Race Ethnicity], COUNT(Gender) AS [Male Count]
+    FROM SubstanceAbuseProgramme
+    WHERE Gender = 'Male'
+    GROUP BY [Race Ethnicity]
+GO
+
+-- Run VWRaceEthnicityMale
+SELECT *
+FROM VWRaceEthnicityMale
 
 
 
