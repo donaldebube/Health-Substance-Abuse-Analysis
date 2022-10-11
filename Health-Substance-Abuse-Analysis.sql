@@ -206,17 +206,38 @@ INNER JOIN VWProgramFemale F
     ON M.Program = F.Program
 GO
 
+
+-- Create VIEWS FOR THE FOLLOWING:
+
 -- Number of both Usual Care and Intervention Patients by Age Range (Adult)
-SELECT DISTINCT Program, COUNT([Age Range]) AS [Total No of Adult Category]
-FROM SubstanceAbuseProgramme
-WHERE [Age Range] = 'Adult'
-GROUP BY Program
+CREATE VIEW VWProgramByAgeRangeAdult 
+AS 
+    SELECT DISTINCT Program, COUNT([Age Range]) AS [Total No of Adult Category]
+    FROM SubstanceAbuseProgramme
+    WHERE [Age Range] = 'Adult'
+    GROUP BY Program
+GO
+
+-- Run VWProgramByAgeRangeAdult View
+SELECT *
+FROM VWProgramByAgeRangeAdult 
+GO
+
 
 -- Number of both Usual Care and Intervention Patients by Age Range (Senior Citizen)
-SELECT Program, COUNT([Age Range]) AS [Total No of Senior Citizen Category]
-FROM SubstanceAbuseProgramme
-WHERE [Age Range] = 'Senior Citizen'
-GROUP BY Program
+CREATE VIEW VWProgramByAgeRangeSeniorCitizen
+AS   
+    SELECT Program, COUNT([Age Range]) AS [Total No of Senior Citizen Category]
+    FROM SubstanceAbuseProgramme
+    WHERE [Age Range] = 'Senior Citizen'
+    GROUP BY Program
+GO
+
+-- Run VWProgramByAgeRangeSeniorCitizen View
+SELECT *
+FROM VWProgramByAgeRangeSeniorCitizen 
+GO
+
 
 -- Number of both Usual Care and Intervention Patients by Age Range (Teenager)
 SELECT Program, COUNT([Age Range]) AS [Total No of Teenager Category]
