@@ -43,7 +43,47 @@ SET
     MedDx = 0
 WHERE MedDx = 6
 
--- Create an Age Range for Analysis Purpose
+
+-- Change the values present in the Race Etnicity column for clarity
+-- Hispanic = Hispanic or Latino
+-- NativeAm = Native American
+-- NonHispBlack = African American alone non-Hispanic
+-- NonHispWhite = White alone non-Hispanic
+
+-- Verification
+SELECT DISTINCT [Race Ethnicity]
+FROM SubstanceAbuseProgramme
+
+-- Update data in column
+-- For Hispanic or Latino Category 
+UPDATE SubstanceAbuseProgramme
+SET 
+    [Race Ethnicity] = 'Hispanic or Latino'
+WHERE [Race Ethnicity] = 'Hispanic'
+
+-- For Native American
+UPDATE SubstanceAbuseProgramme
+SET 
+    [Race Ethnicity] = 'Native American'
+WHERE [Race Ethnicity] = 'NativeAm'
+
+-- For African American alone non-Hispanic
+UPDATE SubstanceAbuseProgramme
+SET 
+    [Race Ethnicity] = 'African American alone non-Hispanic'
+WHERE [Race Ethnicity] = 'NonHispBlack'
+
+-- For White alone non-Hispanic
+UPDATE SubstanceAbuseProgramme
+SET 
+    [Race Ethnicity] = 'White alone non-Hispanic'
+WHERE [Race Ethnicity] = 'NonHispWhite'
+
+
+
+-- For Analysis Purpose
+
+-- Create an Age Range for Analysis Purpose (1)
 -- Age Range
 -- 18-19 = Teenager
 -- 20-39 = Young Adult
@@ -93,49 +133,14 @@ SELECT AGE, [Age Range]
 FROM SubstanceAbuseProgramme
 WHERE [Age Range] IS NULL
 
--- Change the values present in the Race Etnicity column for clarity
--- Hispanic = Hispanic or Latino
--- NativeAm = Native American
--- NonHispBlack = African American alone non-Hispanic
--- NonHispWhite = White alone non-Hispanic
 
--- Verification
-SELECT DISTINCT [Race Ethnicity]
-FROM SubstanceAbuseProgramme
-
--- Update data in column
--- For Hispanic or Latino Category 
-UPDATE SubstanceAbuseProgramme
-SET 
-    [Race Ethnicity] = 'Hispanic or Latino'
-WHERE [Race Ethnicity] = 'Hispanic'
-
--- For Native American
-UPDATE SubstanceAbuseProgramme
-SET 
-    [Race Ethnicity] = 'Native American'
-WHERE [Race Ethnicity] = 'NativeAm'
-
--- For African American alone non-Hispanic
-UPDATE SubstanceAbuseProgramme
-SET 
-    [Race Ethnicity] = 'African American alone non-Hispanic'
-WHERE [Race Ethnicity] = 'NonHispBlack'
-
--- For White alone non-Hispanic
-UPDATE SubstanceAbuseProgramme
-SET 
-    [Race Ethnicity] = 'White alone non-Hispanic'
-WHERE [Race Ethnicity] = 'NonHispWhite'
-
-
-
--- For Analysis Purpose
+-- Gender Count (3)
 SELECT DISTINCT Gender, COUNT(Gender) AS [Total Count]
 FROM SubstanceAbuseProgramme
 GROUP BY Gender
 
--- Here, we can see that the month of February had the highest number of admissions.
+
+-- Here, we can see that the month of February had the highest number of admissions (4)
 SELECT DISTINCT 
     TOP 10 [Admission Date], 
     DATENAME(MONTH, ([Admission Date])) AS Month, 
@@ -144,26 +149,31 @@ FROM SubstanceAbuseProgramme
 GROUP BY [Admission Date]
 ORDER BY [COUNT] DESC
 
---  Compare different hospitalization programs. 
+
+--  Compare different hospitalization programs.(5)
 -- What conclusion(s) can you draw from it?
 SELECT *
 FROM SubstanceAbuseProgramme
 
+-- Total Count of both Usual Care and Intervention Patients
 SELECT Program, COUNT(Program) AS [Total Count]
 FROM SubstanceAbuseProgramme
 GROUP BY Program
 
--- Number of both Usual Care and Intervention Patients (Male)
+-- Number of both Usual Care and Intervention Patients by Gender (Male)
 SELECT Program, COUNT(Gender) AS [Total No of Male]
 FROM SubstanceAbuseProgramme
 WHERE Gender = 'Male' 
 GROUP BY Program, Gender
 
--- Number of both Usual Care and Intervention Patients (Female)
+-- Number of both Usual Care and Intervention Patients by Gender (Female)
 SELECT Program, COUNT(Gender) AS [Total No of Female]
 FROM SubstanceAbuseProgramme
 WHERE Gender = 'Female'
 GROUP BY Program
+
+-- Number of both Usual Care and Intervention Patients by Age Range (Female)
+
 
 
 
