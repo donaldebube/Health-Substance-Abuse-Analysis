@@ -81,7 +81,7 @@ WHERE [Race Ethnicity] = 'NonHispWhite'
 
 
 
--- For Analysis Purpose
+-- For Analysis
 
 -- Create an Age Range for Analysis Purpose (1)
 -- Age Range
@@ -163,18 +163,48 @@ FROM SubstanceAbuseProgramme
 SELECT DISTINCT Program, COUNT(Program) AS [Total Count]
 FROM SubstanceAbuseProgramme
 GROUP BY Program
+GO
+
+-- Create VIEWS FOR THE FOLLOWING:
 
 -- Number of both Usual Care and Intervention Patients by Gender (Male)
-SELECT DISTINCT Program, COUNT(Gender) AS [Total No of Male]
-FROM SubstanceAbuseProgramme
-WHERE Gender = 'Male' 
-GROUP BY Program, Gender
+CREATE VIEW VWProgramMale
+AS
+    SELECT DISTINCT Program, COUNT(Gender) AS [Total No of Male]
+    FROM SubstanceAbuseProgramme
+    WHERE Gender = 'Male' 
+    GROUP BY Program, Gender
+GO
+
+-- Run VWProgramMale View
+SELECT *
+FROM VWProgramMale
+GO
 
 -- Number of both Usual Care and Intervention Patients by Gender (Female)
-SELECT DISTINCT Program, COUNT(Gender) AS [Total No of Female]
-FROM SubstanceAbuseProgramme
-WHERE Gender = 'Female'
-GROUP BY Program
+CREATE VIEW VWProgramFemale
+AS
+    SELECT DISTINCT Program, COUNT(Gender) AS [Total No of Female]
+    FROM SubstanceAbuseProgramme
+    WHERE Gender = 'Female'
+    GROUP BY Program
+GO
+
+-- Run VWProgramFemale View
+SELECT *
+FROM VWProgramFemale
+GO
+
+-- Join the VWProgramFemale and the VWProgramMale VIEWS to create a single Table
+SELECT 
+    M.Program, 
+    M.[Total No of Male], 
+    F.[Total No of Female], 
+    M.[Total No of Male] + F.[Total No of Female] AS [Total Gender]
+FROM VWProgramMale M
+INNER JOIN VWProgramFemale F
+    ON M.Program = F.Program
+GO
 
 -- Number of both Usual Care and Intervention Patients by Age Range (Adult)
 SELECT DISTINCT Program, COUNT([Age Range]) AS [Total No of Adult Category]
