@@ -138,11 +138,16 @@ GROUP BY Gender
 -- Here, we can see that the month of February had the highest number of admissions.
 SELECT DISTINCT 
     TOP 10 [Admission Date], 
-    DATENAME(MONTH, ([Admission Date])), 
-    COUNT([Admission Date]) AS COUNT
+    DATENAME(MONTH, ([Admission Date])) AS Month, 
+    COUNT([Admission Date]) AS Count
 FROM SubstanceAbuseProgramme
 GROUP BY [Admission Date]
 ORDER BY [COUNT] DESC
+
+--  Compare different hospitalization programs. 
+-- What conclusion(s) can you draw from it?
+SELECT *
+ FROM SubstanceAbuseProgramme
 
 -- Get the avaerage, max, min of the DLA1 and DLA2.
 
