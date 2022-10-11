@@ -152,30 +152,49 @@ ORDER BY [COUNT] DESC
 
 --  Compare different hospitalization programs.(5)
 -- What conclusion(s) can you draw from it?
-SELECT *
+SELECT DISTINCT [Age Range]
 FROM SubstanceAbuseProgramme
 
 -- Total Count of both Usual Care and Intervention Patients
-SELECT Program, COUNT(Program) AS [Total Count]
+SELECT DISTINCT Program, COUNT(Program) AS [Total Count]
 FROM SubstanceAbuseProgramme
 GROUP BY Program
 
 -- Number of both Usual Care and Intervention Patients by Gender (Male)
-SELECT Program, COUNT(Gender) AS [Total No of Male]
+SELECT DISTINCT Program, COUNT(Gender) AS [Total No of Male]
 FROM SubstanceAbuseProgramme
 WHERE Gender = 'Male' 
 GROUP BY Program, Gender
 
 -- Number of both Usual Care and Intervention Patients by Gender (Female)
-SELECT Program, COUNT(Gender) AS [Total No of Female]
+SELECT DISTINCT Program, COUNT(Gender) AS [Total No of Female]
 FROM SubstanceAbuseProgramme
 WHERE Gender = 'Female'
 GROUP BY Program
 
--- Number of both Usual Care and Intervention Patients by Age Range (Female)
+-- Number of both Usual Care and Intervention Patients by Age Range (Adult)
+SELECT DISTINCT Program, COUNT([Age Range]) AS [Total No of Adult Category]
+FROM SubstanceAbuseProgramme
+WHERE [Age Range] = 'Adult'
+GROUP BY Program
 
+-- Number of both Usual Care and Intervention Patients by Age Range (Senior Citizen)
+SELECT Program, COUNT([Age Range]) AS [Total No of Senior Citizen Category]
+FROM SubstanceAbuseProgramme
+WHERE [Age Range] = 'Senior Citizen'
+GROUP BY Program
 
+-- Number of both Usual Care and Intervention Patients by Age Range (Teenager)
+SELECT Program, COUNT([Age Range]) AS [Total No of Teenager Category]
+FROM SubstanceAbuseProgramme
+WHERE [Age Range] = 'Teenager'
+GROUP BY Program
 
+-- Number of both Usual Care and Intervention Patients by Age Range (Teenager)
+SELECT Program, COUNT([Age Range]) AS [Total No of Young Adult Category]
+FROM SubstanceAbuseProgramme
+WHERE [Age Range] = 'Young Adult'
+GROUP BY Program
 
 -- Get the avaerage, max, min of the DLA1 and DLA2.
 
