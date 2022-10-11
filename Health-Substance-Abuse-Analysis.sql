@@ -225,10 +225,38 @@ GO
 -- Run VWRaceEthnicityMale
 SELECT *
 FROM VWRaceEthnicityMale
+GO
+
+-- Create View For Just Female Gender in the Race Ethnicity Column
+CREATE VIEW VWRaceEthnicityFemale
+AS
+    SELECT [Race Ethnicity], COUNT(Gender) AS [Female Count]
+    FROM SubstanceAbuseProgramme
+    WHERE Gender = 'Female'
+    GROUP BY [Race Ethnicity]
+GO
+
+SELECT *
+FROM VWRaceEthnicityFemale
+
+-- JOIN VWRaceEthnicityFemale and VWRaceEthnicityMale
+SELECT 
+    F.[Race Ethnicity], 
+    F.[Female Count], 
+    M.[Male Count], 
+    F.[Female Count] + M.[Male Count] AS [Total Count]
+FROM VWRaceEthnicityFemale AS F
+INNER JOIN VWRaceEthnicityMale AS M
+ON F.[Race Ethnicity] = M.[Race Ethnicity]
+GO
 
 
 
 
+-- SELECT [Race Ethnicity], COUNT(Gender)
+-- FROM SubstanceAbuseProgramme
+-- WHERE [Race Ethnicity] = 'African American alone non-Hispanic'
+-- GROUP BY [Race Ethnicity]
 
 
 
