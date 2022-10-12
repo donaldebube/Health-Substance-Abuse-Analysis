@@ -241,7 +241,7 @@ SELECT *
 FROM VWProgramByRaceEthnicityHispanicorLatino
 GO
 
--- Number of both Usual Care and Intervention Patients by Race Ethnicity (Hispanic or Latino) 
+-- Number of both Usual Care and Intervention Patients by Race Ethnicity (Native American) 
 CREATE VIEW VWProgramByRaceEthnicityNativeAmerican
 AS
     SELECT Program, COUNT([Race Ethnicity]) AS [Total No of Native American]
