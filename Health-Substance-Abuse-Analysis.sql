@@ -208,7 +208,12 @@ GO
 
 
 -- Create VIEWS FOR THE FOLLOWING:
--- Number of both Usual Care and Intervention Patients by Race Ethnicity 
+
+SELECT DISTINCT [Race Ethnicity]
+FROM SubstanceAbuseProgramme
+GO
+
+-- Number of both Usual Care and Intervention Patients by Race Ethnicity (African American alone non-Hispanic) 
 CREATE VIEW VWProgramByRaceEthnicityAfricanAmerican
 AS
     SELECT DISTINCT Program, COUNT([Race Ethnicity]) AS [Total No of African American alone non-Hispanic ]
@@ -216,6 +221,34 @@ AS
     WHERE [Race Ethnicity] = 'African American alone non-Hispanic'
     GROUP BY Program
 GO
+
+-- Run VWProgramByRaceEthnicityAfricanAmerican View
+SELECT *
+FROM VWProgramByRaceEthnicityAfricanAmerican
+GO
+
+-- Number of both Usual Care and Intervention Patients by Race Ethnicity (Hispanic or Latino) 
+CREATE VIEW VWProgramByRaceEthnicityHispanicorLatino
+AS
+    SELECT Program, COUNT([Race Ethnicity]) AS [Total No of Hispanic or Latino]
+    FROM SubstanceAbuseProgramme
+    WHERE [Race Ethnicity] = 'Hispanic or Latino'
+    GROUP BY Program
+GO
+
+-- Run VWProgramByRaceEthnicityHispanicorLatino View
+SELECT *
+FROM VWProgramByRaceEthnicityHispanicorLatino
+GO
+
+
+
+
+
+
+
+
+
 
 
 
