@@ -455,6 +455,20 @@ GO
 -- Run VWRaceEthnicityAdult
 SELECT *
 FROM VWRaceEthnicityAdult
+GO
+
+-- Create View For Just Senior Citizen category in the Race Ethnicity Column
+CREATE VIEW VWRaceEthnicitySeniorCitizen
+AS
+    SELECT [Race Ethnicity], COUNT([Age Range]) AS [Total Count for Senior Citizen]
+    FROM SubstanceAbuseProgramme
+    WHERE [Age Range] = 'Senior Citizen'
+    GROUP BY [Race Ethnicity]
+GO
+
+-- Run VWRaceEthnicitySeniorCitizen
+SELECT *
+FROM VWRaceEthnicitySeniorCitizen
 
 
 
