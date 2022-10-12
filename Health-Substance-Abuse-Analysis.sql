@@ -573,9 +573,9 @@ AS
     GROUP BY MHDx
 GO
 
--- Run VWMHDXFemaleCount
+-- Run VWMHDXAdult
 SELECT *
-FROM VWMHDXFemaleCount
+FROM VWMHDXAdult
 GO
 
 
