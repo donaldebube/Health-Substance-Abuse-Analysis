@@ -624,7 +624,7 @@ SELECT *
 FROM VWMHDXYoungAdult
 GO
 
--- JOIN 
+-- JOIN VWMHDXAdult, VWMHDXSeniorCitizen, VWMHDXTeenager and VWMHDXYoungAdult
 
 
 
