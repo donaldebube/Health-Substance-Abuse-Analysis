@@ -165,6 +165,10 @@ FROM SubstanceAbuseProgramme
 GROUP BY Program
 GO
 
+
+
+-- For Program
+
 -- Create VIEWS FOR THE FOLLOWING:
 
 -- Number of both Usual Care and Intervention Patients by Gender (Male)
@@ -208,10 +212,6 @@ GO
 
 
 -- Create VIEWS FOR THE FOLLOWING:
-
-SELECT DISTINCT [Race Ethnicity]
-FROM SubstanceAbuseProgramme
-GO
 
 -- Number of both Usual Care and Intervention Patients by Race Ethnicity (African American alone non-Hispanic) 
 CREATE VIEW VWProgramByRaceEthnicityAfricanAmerican
@@ -287,10 +287,12 @@ GO
 -- JOIN VWProgramByRaceEthnicityWhitealonenonHispanic, VWProgramByRaceEthnicityNativeAmerican, VWProgramByRaceEthnicityHispanicorLatino and VWProgramByRaceEthnicityAfricanAmerican VIEWS
 SELECT 
     AA.Program, 
+    AA.[Total No of African American alone non-Hispanic ],
     HL.[Total No of Hispanic or Latino], 
     NA.[Total No of Native American], 
     O.[Total No of Other], 
-    WH.[Total No of White alone non-Hispanic]
+    WH.[Total No of White alone non-Hispanic],
+    AA.[Total No of African American alone non-Hispanic ] + HL.[Total No of Hispanic or Latino] + NA.[Total No of Native American] + O.[Total No of Other] + WH.[Total No of White alone non-Hispanic] AS [Total Count]
 FROM VWProgramByRaceEthnicityAfricanAmerican AS AA
 INNER JOIN VWProgramByRaceEthnicityHispanicorLatino AS HL
     ON AA.Program = HL.Program
@@ -301,19 +303,6 @@ INNER JOIN VWProgramByRaceEthnicityOther AS O
 INNER JOIN VWProgramByRaceEthnicityWhitealonenonHispanic AS WH
     ON AA.Program = WH.Program
 GO
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 -- Create VIEWS FOR THE FOLLOWING:
