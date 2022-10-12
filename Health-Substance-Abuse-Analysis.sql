@@ -594,9 +594,37 @@ SELECT *
 FROM VWMHDXSeniorCitizen
 GO
 
+-- MHDX By Age Range (Teenager)
+-- Create VIEW for the Teenager Count
+CREATE VIEW VWMHDXTeenager
+AS    
+    SELECT DISTINCT MHDx, COUNT([Age Range]) AS [Teenager Count]
+    FROM SubstanceAbuseProgramme
+    WHERE [Age Range] = 'Teenager'
+    GROUP BY MHDx
+GO
 
+-- Run VWMHDXTeenager
+SELECT *
+FROM VWMHDXTeenager
+GO
 
+-- MHDX By Age Range (Young Adult)
+-- Create VIEW for the Young Adult Count
+CREATE VIEW VWMHDXYoungAdult
+AS    
+    SELECT DISTINCT MHDx, COUNT([Age Range]) AS [Young Adult Count]
+    FROM SubstanceAbuseProgramme
+    WHERE [Age Range] = 'Young Adult'
+    GROUP BY MHDx
+GO
 
+-- Run VWMHDXYoungAdult
+SELECT *
+FROM VWMHDXYoungAdult
+GO
+
+-- JOIN 
 
 
 
