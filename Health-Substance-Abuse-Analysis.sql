@@ -497,11 +497,24 @@ GO
 -- Run VWRaceEthnicityYoungAdult
 SELECT *
 FROM VWRaceEthnicityYoungAdult
+GO
 
-
-
-
-
+-- JOIN VWRaceEthnicityAdult, VWRaceEthnicitySeniorCitizen, VWRaceEthnicityTeenager and VWRaceEthnicityYoungAdult VIEWS
+SELECT 
+    A.[Race Ethnicity],
+    A.[Total Count for Adult], 
+    SC.[Total Count for Senior Citizen], 
+    T.[Total Count for Teenager],
+    YA.[Total Count for Young Adult],
+    A.[Total Count for Adult] + SC.[Total Count for Senior Citizen] + T.[Total Count for Teenager] + YA.[Total Count for Young Adult] AS [Total Count]
+FROM VWRaceEthnicityAdult AS A
+INNER JOIN VWRaceEthnicitySeniorCitizen AS SC
+    ON A.[Race Ethnicity] = SC.[Race Ethnicity]
+INNER JOIN VWRaceEthnicityTeenager AS T
+    ON A.[Race Ethnicity] = T.[Race Ethnicity]
+INNER JOIN VWRaceEthnicityYoungAdult AS YA
+    ON A.[Race Ethnicity] = YA.[Race Ethnicity]
+GO
 
 
 
