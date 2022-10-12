@@ -396,7 +396,6 @@ FROM SubstanceAbuseProgramme
 WHERE Gender = 'Male'
 GROUP BY [Race Ethnicity]
 GO
--- Get the avaerage, max, min of the DLA1 and DLA2.
 
 -- Create View For Just Male Gender in the Race Ethnicity Column
 CREATE VIEW VWRaceEthnicityMale
@@ -421,6 +420,7 @@ AS
     GROUP BY [Race Ethnicity]
 GO
 
+-- Run VWRaceEthnicityFemale
 SELECT *
 FROM VWRaceEthnicityFemale
 
@@ -443,13 +443,24 @@ SELECT DISTINCT [Age Range]
 FROM SubstanceAbuseProgramme
 GO
 
-SELECT [Race Ethnicity], COUNT([Age Range]) AS [Total Count for Adult]
-FROM SubstanceAbuseProgramme
-WHERE [Age Range] = 'Adult'
-GROUP BY [Race Ethnicity]
+-- Create View For Just Adult category in the Race Ethnicity Column
+CREATE VIEW VWRaceEthnicityAdult
+AS
+    SELECT [Race Ethnicity], COUNT([Age Range]) AS [Total Count for Adult]
+    FROM SubstanceAbuseProgramme
+    WHERE [Age Range] = 'Adult'
+    GROUP BY [Race Ethnicity]
+GO
+
+-- Run VWRaceEthnicityAdult
+SELECT *
+FROM VWRaceEthnicityAdult
 
 SELECT *
 FROM SubstanceAbuseProgramme
+
+
+-- Get the avaerage, max, min of the DLA1 and DLA2.
 
 -- SELECT [Race Ethnicity], COUNT(Gender)
 -- FROM SubstanceAbuseProgramme
