@@ -563,6 +563,7 @@ GO
 SELECT DISTINCT [Age Range]
 FROM SubstanceAbuseProgramme
 GO
+
 -- MHDX By Age Range (Adult)
 -- Create VIEW for the Adult Count
 CREATE VIEW VWMHDXAdult
@@ -578,6 +579,20 @@ SELECT *
 FROM VWMHDXAdult
 GO
 
+-- MHDX By Age Range (Senior Citizen)
+-- Create VIEW for the Senior Citizen Count
+CREATE VIEW VWMHDXSeniorCitizen
+AS    
+    SELECT DISTINCT MHDx, COUNT([Age Range]) AS [Senior Citizen Count]
+    FROM SubstanceAbuseProgramme
+    WHERE [Age Range] = 'Senior Citizen'
+    GROUP BY MHDx
+GO
+
+-- Run VWMHDXSeniorCitizen
+SELECT *
+FROM VWMHDXSeniorCitizen
+GO
 
 
 
