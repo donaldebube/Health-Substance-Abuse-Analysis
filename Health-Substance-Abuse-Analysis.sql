@@ -483,8 +483,20 @@ GO
 -- Run VWRaceEthnicityTeenager
 SELECT *
 FROM VWRaceEthnicityTeenager
+GO
 
+-- Create View For Just Young Adult category in the Race Ethnicity Column
+CREATE VIEW VWRaceEthnicityYoungAdult
+AS
+    SELECT [Race Ethnicity], COUNT([Age Range]) AS [Total Count for Young Adult]
+    FROM SubstanceAbuseProgramme
+    WHERE [Age Range] = 'Young Adult'
+    GROUP BY [Race Ethnicity]
+GO
 
+-- Run VWRaceEthnicityYoungAdult
+SELECT *
+FROM VWRaceEthnicityYoungAdult
 
 
 
