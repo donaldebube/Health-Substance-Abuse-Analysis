@@ -385,6 +385,7 @@ GO
 
 
 
+
 --  For Race Ethnicity
 SELECT DISTINCT [Race Ethnicity], COUNT([Race Ethnicity]) AS [Total Count]
 FROM SubstanceAbuseProgramme
