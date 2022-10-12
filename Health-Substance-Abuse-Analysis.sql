@@ -519,6 +519,36 @@ GO
 
 
 
+-- For MHDX:
+-- MHDX By Gender
+-- Create VIEW for the Male Count
+CREATE VIEW VWMHDXMaleCount
+AS 
+    SELECT DISTINCT MHDx, COUNT(Gender) AS [Male Count]
+    FROM SubstanceAbuseProgramme
+    WHERE Gender = 'Male'
+    GROUP BY MHDx
+GO
+
+-- Run VWMHDXMaleCount
+SELECT *
+FROM VWMHDXMaleCount
+GO
+
+-- Create VIEW for the Male Count
+CREATE VIEW VWMHDXMaleCount
+AS 
+    SELECT DISTINCT MHDx, COUNT(Gender) AS [Male Count]
+    FROM SubstanceAbuseProgramme
+    WHERE Gender = 'Male'
+    GROUP BY MHDx
+GO
+
+-- Run VWMHDXMaleCount
+SELECT *
+FROM VWMHDXMaleCount
+GO
+
 
 
 
