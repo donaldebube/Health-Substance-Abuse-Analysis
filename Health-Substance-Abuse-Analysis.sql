@@ -535,7 +535,7 @@ SELECT *
 FROM VWMHDXMaleCount
 GO
 
--- Create VIEW for the Male Count
+-- Create VIEW for the Female Count
 CREATE VIEW VWMHDXFemaleCount
 AS 
     SELECT DISTINCT MHDx, COUNT(Gender) AS [Female Count]
