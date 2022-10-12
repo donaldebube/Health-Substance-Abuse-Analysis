@@ -441,7 +441,12 @@ GO
 
 SELECT DISTINCT [Age Range]
 FROM SubstanceAbuseProgramme
+GO
 
+SELECT [Race Ethnicity], COUNT([Age Range]) AS [Total Count for Adult]
+FROM SubstanceAbuseProgramme
+WHERE [Age Range] = 'Adult'
+GROUP BY [Race Ethnicity]
 
 SELECT *
 FROM SubstanceAbuseProgramme
