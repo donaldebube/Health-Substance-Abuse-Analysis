@@ -255,6 +255,54 @@ SELECT *
 FROM VWProgramByRaceEthnicityNativeAmerican
 GO
 
+-- Number of both Usual Care and Intervention Patients by Race Ethnicity (Native American) 
+CREATE VIEW VWProgramByRaceEthnicityNativeAmerican
+AS
+    SELECT Program, COUNT([Race Ethnicity]) AS [Total No of Native American]
+    FROM SubstanceAbuseProgramme
+    WHERE [Race Ethnicity] = 'Native American'
+    GROUP BY Program
+GO
+
+-- Run VWProgramByRaceEthnicityNativeAmerican View
+SELECT *
+FROM VWProgramByRaceEthnicityNativeAmerican
+GO
+
+-- Number of both Usual Care and Intervention Patients by Race Ethnicity (Other) 
+CREATE VIEW VWProgramByRaceEthnicityOther
+AS
+    SELECT Program, COUNT([Race Ethnicity]) AS [Total No of Native American]
+    FROM SubstanceAbuseProgramme
+    WHERE [Race Ethnicity] = 'Other'
+    GROUP BY Program
+GO
+
+-- Run VWProgramByRaceEthnicityNativeAmerican View
+SELECT *
+FROM VWProgramByRaceEthnicityOther
+GO
+
+-- Number of both Usual Care and Intervention Patients by Race Ethnicity (Other) 
+CREATE VIEW VWProgramByRaceEthnicityOther
+AS
+    SELECT Program, COUNT([Race Ethnicity]) AS [Total No of Native American]
+    FROM SubstanceAbuseProgramme
+    WHERE [Race Ethnicity] = 'Other'
+    GROUP BY Program
+GO
+
+-- Run VWProgramByRaceEthnicityNativeAmerican View
+SELECT *
+FROM VWProgramByRaceEthnicityOther
+GO
+
+
+
+
+
+
+
 
 
 
