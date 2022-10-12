@@ -560,7 +560,23 @@ INNER JOIN VWMHDXFemaleCount AS FC
     ON MC.MHDx = FC.MHDx
 GO
 
+SELECT DISTINCT [Age Range]
+FROM SubstanceAbuseProgramme
+GO
+-- MHDX By Age Range (Adult)
+-- Create VIEW for the Adult Count
+CREATE VIEW VWMHDXAdult
+AS    
+    SELECT DISTINCT MHDx, COUNT([Age Range]) AS [Adult Count]
+    FROM SubstanceAbuseProgramme
+    WHERE [Age Range] = 'Adult'
+    GROUP BY MHDx
+GO
 
+-- Run VWMHDXFemaleCount
+SELECT *
+FROM VWMHDXFemaleCount
+GO
 
 
 
