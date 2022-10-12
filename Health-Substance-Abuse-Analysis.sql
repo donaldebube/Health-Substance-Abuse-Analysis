@@ -538,9 +538,9 @@ GO
 -- Create VIEW for the Male Count
 CREATE VIEW VWMHDXFemaleCount
 AS 
-    SELECT DISTINCT MHDx, COUNT(Gender) AS [Male Count]
+    SELECT DISTINCT MHDx, COUNT(Gender) AS [Female Count]
     FROM SubstanceAbuseProgramme
-    WHERE Gender = 'Male'
+    WHERE Gender = 'Female'
     GROUP BY MHDx
 GO
 
