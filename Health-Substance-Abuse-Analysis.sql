@@ -549,6 +549,9 @@ SELECT *
 FROM VWMHDXFemaleCount
 GO
 
+-- JOIN VWMHDXMaleCount and VWMHDXFemaleCount
+
+
 
 
 
