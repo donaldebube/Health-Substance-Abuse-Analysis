@@ -631,6 +631,7 @@ SELECT
     SC.[Senior Citizen Count], 
     T.[Teenager Count], 
     YA.[Young Adult Count], 
+    A.[Adult Count] + SC.[Senior Citizen Count] + T.[Teenager Count] + YA.[Young Adult Count] AS [Total Count]
 FROM VWMHDXAdult AS A
 INNER JOIN VWMHDXSeniorCitizen AS SC
     ON A.MHDx = SC.MHDx
@@ -639,6 +640,8 @@ INNER JOIN VWMHDXTeenager AS T
 INNER JOIN VWMHDXYoungAdult AS YA
     ON A.MHDx = YA.MHDx
 GO
+
+
 
 
 
