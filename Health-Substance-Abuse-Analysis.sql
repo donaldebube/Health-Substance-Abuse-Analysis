@@ -436,12 +436,12 @@ ON F.[Race Ethnicity] = M.[Race Ethnicity]
 GO
 
 
-
 -- I would like to find out the different Age Ranges that are prominent in the different Race Ethnicity.
 
 SELECT DISTINCT [Age Range]
 FROM SubstanceAbuseProgramme
 GO
+
 
 -- Create View For Just Adult category in the Race Ethnicity Column
 CREATE VIEW VWRaceEthnicityAdult
@@ -455,6 +455,23 @@ GO
 -- Run VWRaceEthnicityAdult
 SELECT *
 FROM VWRaceEthnicityAdult
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 SELECT *
 FROM SubstanceAbuseProgramme
