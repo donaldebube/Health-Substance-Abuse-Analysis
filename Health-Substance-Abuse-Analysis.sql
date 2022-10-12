@@ -550,7 +550,15 @@ FROM VWMHDXFemaleCount
 GO
 
 -- JOIN VWMHDXMaleCount and VWMHDXFemaleCount
-
+SELECT 
+    MC.MHDx, 
+    MC.[Male Count], 
+    FC.[Female Count],
+    MC.[Male Count] + FC.[Female Count] AS [Total Count]
+FROM VWMHDXMaleCount AS MC
+INNER JOIN VWMHDXFemaleCount AS FC
+    ON MC.MHDx = FC.MHDx
+GO
 
 
 
