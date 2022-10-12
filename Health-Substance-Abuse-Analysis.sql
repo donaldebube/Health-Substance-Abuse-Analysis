@@ -546,7 +546,7 @@ GO
 
 -- Run VWMHDXFemaleCount
 SELECT *
-FROM VWMHDXMaleCount
+FROM VWMHDXFemaleCount
 GO
 
 
