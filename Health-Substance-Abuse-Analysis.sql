@@ -743,10 +743,10 @@ GO
 
 
 -- For SUDx
-
-
 SELECT DISTINCT [Psych Admit]
 FROM SubstanceAbuseProgramme
+
+
 
 
 
