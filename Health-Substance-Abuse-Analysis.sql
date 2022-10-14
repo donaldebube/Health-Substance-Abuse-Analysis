@@ -687,7 +687,7 @@ AS
     GROUP BY MHDx
 GO
 
--- Run VWMHDXNativeAmerican
+--- Run VWMHDXNativeAmerican
 SELECT *
 FROM VWMHDXNativeAmerican
 GO
