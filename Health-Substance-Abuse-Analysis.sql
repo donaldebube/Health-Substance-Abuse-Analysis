@@ -1012,7 +1012,7 @@ SELECT DISTINCT
     MAX(DLA1) AS [Maximum DLA1], 
     MAX(DLA2) AS [Maximum DLA2],
     AVG(DLA1) AS [Average DLA1],
-    AVG(DLA2) AS [Average DLA2]
+    ROUND(AVG(DLA2), 0) AS [Average DLA2]
 FROM SubstanceAbuseProgramme
 GROUP BY [Admission Date]
 
