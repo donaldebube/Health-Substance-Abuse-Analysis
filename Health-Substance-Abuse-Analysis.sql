@@ -664,14 +664,26 @@ SELECT *
 FROM VWMHDXAfricanAmerican
 GO
 
--- Create VIEW for the African American alone non-Hispanic Count
-CREATE VIEW VWMHDXAfricanAmerican
+-- Create VIEW for the Hispanic or Latino Count
+CREATE VIEW VWMHDXHispanicorLatino
 AS
-    SELECT MHDx, COUNT([Race Ethnicity]) AS [African American Count]
+    SELECT MHDx, COUNT([Race Ethnicity]) AS [Hispanic or Latino Count]
     FROM SubstanceAbuseProgramme
-    WHERE [Race Ethnicity] = 'African American alone non-Hispanic'
+    WHERE [Race Ethnicity] = 'Hispanic or Latino'
     GROUP BY MHDx
 GO
+
+-- Run VWMHDXAfricanAmerican
+SELECT *
+FROM VWMHDXHispanicorLatino
+GO
+
+
+
+
+
+
+
 
 -- NOTE: DO MDHX BY RACE ETHNICITY AND PROGRAM NEXT
 
