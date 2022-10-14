@@ -797,6 +797,21 @@ GO
 -- RUN VWSUDXAdult
 SELECT *
 FROM VWSUDXAdult
+GO
+
+-- SUDx by Age Range (Senior Citizen)
+-- CREATE VIEW
+CREATE VIEW VWSUDXSeniorCitizen
+AS    
+    SELECT DISTINCT SUDx, COUNT([Age Range]) AS [Senior Citizen Count]
+    FROM SubstanceAbuseProgramme
+    WHERE [Age Range] = 'Senior Citizen'
+    GROUP BY SUDx
+GO
+
+-- RUN VWSUDXSeniorCitizen
+SELECT *
+FROM VWSUDXSeniorCitizen
 
 
 
