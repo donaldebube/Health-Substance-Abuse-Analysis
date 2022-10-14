@@ -897,17 +897,17 @@ FROM VWSUDXHispanicorLatino
 GO
 
 -- Create VIEW for the Hispanic or Latino Count
-CREATE VIEW VWMHDXNativeAmerican
+CREATE VIEW VWSUDXNativeAmerican
 AS
-    SELECT MHDx, COUNT([Race Ethnicity]) AS [Native American Count]
+    SELECT SUDx, COUNT([Race Ethnicity]) AS [Native American Count]
     FROM SubstanceAbuseProgramme
     WHERE [Race Ethnicity] = 'Native American'
-    GROUP BY MHDx
+    GROUP BY SUDx
 GO
 
--- Run VWMHDXNativeAmerican
+-- Run VWSUDXNativeAmerican
 SELECT *
-FROM VWMHDXNativeAmerican
+FROM VWSUDXNativeAmerican
 GO
 
 -- Create VIEW for the Other Count
