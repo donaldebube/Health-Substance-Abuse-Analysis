@@ -978,7 +978,16 @@ GO
 -- RUN VWPSYCHMALE
 SELECT *
 FROM VWPSYCHMALE
+GO
 
+-- Psych Admit by Gender
+-- CREATE VIEW
+CREATE VIEW VWPSYCHMALE
+AS
+    SELECT Gender, SUM([Psych Admit]) AS [Male Psych Count]
+    FROM SubstanceAbuseProgramme
+    WHERE Gender = 'Male'
+    GROUP 
 
 
 
