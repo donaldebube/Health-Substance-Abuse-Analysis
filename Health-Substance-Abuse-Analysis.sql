@@ -911,31 +911,31 @@ FROM VWSUDXNativeAmerican
 GO
 
 -- Create VIEW for the Other Count
-CREATE VIEW VWMHDXOther
+CREATE VIEW VWSUDXOther
 AS
-    SELECT MHDx, COUNT([Race Ethnicity]) AS [Other Count]
+    SELECT SUDx, COUNT([Race Ethnicity]) AS [Other Count]
     FROM SubstanceAbuseProgramme
     WHERE [Race Ethnicity] = 'Other'
-    GROUP BY MHDx
+    GROUP BY SUDx
 GO
 
--- Run VWMHDXOther
+-- Run VWSUDXOther
 SELECT *
-FROM VWMHDXOther
+FROM VWSUDXOther
 GO
 
 -- Create VIEW for the White alone non-Hispanic Count
-CREATE VIEW VWMHDXWhitenonHispanic
+CREATE VIEW VWSUDXWhitenonHispanic
 AS
-    SELECT MHDx, COUNT([Race Ethnicity]) AS [White alone non-Hispanic Count]
+    SELECT SUDx, COUNT([Race Ethnicity]) AS [White alone non-Hispanic Count]
     FROM SubstanceAbuseProgramme
     WHERE [Race Ethnicity] = 'White alone non-Hispanic'
-    GROUP BY MHDx
+    GROUP BY SUDx
 GO
 
--- Run VWMHDXWhitenonHispanic
+-- Run VWSUDXWhitenonHispanic
 SELECT *
-FROM VWMHDXWhitenonHispanic
+FROM VWSUDXWhitenonHispanic
 GO
 
 
