@@ -939,7 +939,13 @@ FROM VWSUDXWhitenonHispanic
 GO
 
 -- JOIN VWSUDXWhitenonHispanic, VWSUDXOther, VWSUDXNativeAmerican, VWSUDXHispanicorLatino, VWSUDXAfricanAmerican
-SELECT *
+SELECT 
+    SW.SUDx,
+    SW.[White alone non-Hispanic Count],
+    SO.[Other Count],
+    SN.[Native American Count],
+    SH.[Hispanic or Latino Count],
+    SA.[African American Count]
 FROM VWSUDXWhitenonHispanic AS SW
 INNER JOIN VWSUDXOther AS SO
     ON SW.SUDx = SO.SUDx
