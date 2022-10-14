@@ -673,12 +673,24 @@ AS
     GROUP BY MHDx
 GO
 
--- Run VWMHDXAfricanAmerican
+-- Run VWMHDXHispanicorLatino
 SELECT *
 FROM VWMHDXHispanicorLatino
 GO
 
+-- Create VIEW for the Hispanic or Latino Count
+CREATE VIEW VWMHDXNativeAmerican
+AS
+    SELECT MHDx, COUNT([Race Ethnicity]) AS [Native American Count]
+    FROM SubstanceAbuseProgramme
+    WHERE [Race Ethnicity] = 'Native American'
+    GROUP BY MHDx
+GO
 
+-- Run VWMHDXNativeAmerican
+SELECT *
+FROM VWMHDXNativeAmerican
+GO
 
 
 
