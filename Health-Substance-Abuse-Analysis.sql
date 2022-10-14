@@ -706,6 +706,14 @@ SELECT *
 FROM VWMHDXOther
 GO
 
+-- Create VIEW for the White alone non-Hispanic Count
+CREATE VIEW VWMHDXWhitenon-Hispanic
+AS
+    SELECT MHDx, COUNT([Race Ethnicity]) AS [White alone non-Hispanic Count]
+    FROM SubstanceAbuseProgramme
+    WHERE [Race Ethnicity] = 'White alone non-Hispanic'
+    GROUP BY MHDx
+GO
 
 
 
