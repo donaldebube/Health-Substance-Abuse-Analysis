@@ -692,13 +692,18 @@ SELECT *
 FROM VWMHDXNativeAmerican
 GO
 
--- Create VIEW for the Hispanic or Latino Count
+-- Create VIEW for the Other Count
 CREATE VIEW VWMHDXOther
 AS
     SELECT MHDx, COUNT([Race Ethnicity]) AS [Other Count]
     FROM SubstanceAbuseProgramme
     WHERE [Race Ethnicity] = 'Other'
     GROUP BY MHDx
+GO
+
+-- Run VWMHDXOther
+SELECT *
+FROM VWMHDXOther
 GO
 
 
