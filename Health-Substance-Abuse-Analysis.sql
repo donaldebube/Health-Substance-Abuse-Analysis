@@ -743,8 +743,16 @@ GO
 
 
 -- For SUDx
-SELECT DISTINCT [Psych Admit]
+SELECT DISTINCT [SUDx]
 FROM SubstanceAbuseProgramme
+
+-- SUDx by Gender (Male)
+-- CREATE VIEW
+SELECT SUDx, COUNT(Gender)
+FROM SubstanceAbuseProgramme
+WHERE Gender = 'Male'
+GROUP BY SUDx
+
 
 
 
