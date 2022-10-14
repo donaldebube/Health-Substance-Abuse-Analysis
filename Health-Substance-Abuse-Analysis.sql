@@ -965,7 +965,10 @@ SELECT DISTINCT SUM([Psych Admit]) AS [Total Number of Pyschiatric Admission]
 FROM SubstanceAbuseProgramme
 
 -- Psych Admit by Gender
-
+SELECT Gender, SUM([Psych Admit]) AS [Male Psych Count]
+FROM SubstanceAbuseProgramme
+WHERE Gender = 'Male'
+GROUP BY Gender
 
 
 
