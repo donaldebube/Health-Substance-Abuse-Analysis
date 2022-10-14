@@ -813,6 +813,7 @@ GO
 SELECT *
 FROM VWSUDXSeniorCitizen
 GO
+
 -- SUDx by Age Range (Senior Citizen)
 -- CREATE VIEW
 CREATE VIEW VWSUDXTeenager
@@ -828,6 +829,15 @@ SELECT *
 FROM VWSUDXTeenager
 
 
+-- SUDx by Age Range (Senior Citizen)
+-- CREATE VIEW
+CREATE VIEW VWSUDXTeenager
+AS    
+    SELECT DISTINCT SUDx, COUNT([Age Range]) AS [Teenager Count]
+    FROM SubstanceAbuseProgramme
+    WHERE [Age Range] = 'Teenager'
+    GROUP BY SUDx
+GO
 
 
 
