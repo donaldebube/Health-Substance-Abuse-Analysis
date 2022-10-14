@@ -845,7 +845,12 @@ FROM VWSUDXYoungAdult
 GO
 
 -- JOIN VWSUDXYoungAdult, VWSUDXTeenager, VWSUDXSeniorCitizen and VWSUDXAdult
-SELECT *
+SELECT 
+    SA.SUDx, 
+    SA.[Adult Count], 
+    SC.[Senior Citizen Count],
+    ST.[Teenager Count],
+    SY.[Young Adult Count]
 FROM VWSUDXAdult AS SA
 INNER JOIN VWSUDXSeniorCitizen AS SC
     ON SA.SUDx = SC.SUDx
