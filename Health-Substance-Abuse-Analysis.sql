@@ -788,11 +788,15 @@ GO
 -- CREATE VIEW
 CREATE VIEW VWSUDXAdult
 AS    
-    SELECT DISTINCT MHDx, COUNT([Age Range]) AS [Adult Count]
+    SELECT DISTINCT SUDx, COUNT([Age Range]) AS [Adult Count]
     FROM SubstanceAbuseProgramme
     WHERE [Age Range] = 'Adult'
     GROUP BY SUDx
 GO
+
+-- RUN VWSUDXAdult
+SELECT *
+FROM VWSUDXAdult
 
 
 
