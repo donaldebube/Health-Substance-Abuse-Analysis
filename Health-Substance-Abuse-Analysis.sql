@@ -829,7 +829,7 @@ SELECT *
 FROM VWSUDXTeenager
 GO
 
--- SUDx by Age Range (Senior Citizen)
+-- SUDx by Age Range (Young Adult)
 -- CREATE VIEW
 CREATE VIEW VWSUDXYoungAdult
 AS    
@@ -839,7 +839,10 @@ AS
     GROUP BY SUDx
 GO
 
-
+-- RUN VWSUDXYoungAdult
+SELECT *
+FROM VWSUDXYoungAdult
+GO
 
 
 
