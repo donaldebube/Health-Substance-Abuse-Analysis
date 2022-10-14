@@ -969,7 +969,7 @@ GO
 -- CREATE VIEW
 CREATE VIEW VWPSYCHMALE
 AS
-    SELECT Gender, SUM([Psych Admit]) AS [Male Psych Count]
+    SELECT Gender, SUM([Psych Admit]) AS [Psych Count]
     FROM SubstanceAbuseProgramme
     WHERE Gender = 'Male'
     GROUP BY Gender
@@ -982,10 +982,9 @@ GO
 
 -- Psych Admit by Gender (Female)
 -- CREATE VIEW
--- CREATE VIEW
 CREATE VIEW VWPSYCHFEMALE
 AS
-    SELECT Gender, SUM([Psych Admit]) AS [Male Psych Count]
+    SELECT Gender, SUM([Psych Admit]) AS [Psych Count]
     FROM SubstanceAbuseProgramme
     WHERE Gender = 'Female'
     GROUP BY Gender
@@ -994,17 +993,17 @@ GO
 -- RUN VWPSYCHFEMALE
 SELECT *
 FROM VWPSYCHFEMALE
-GO
+UNION
+SELECT *
+FROM VWPSYCHMALE
 
--- JOIN VWPSYCHMALE AND VWPSYCHFEMALE
-SELECT 
-    PM.Gender, 
-    PM.[Male Psych Count], 
-    PF.[Male Psych Count]
-FROM VWPSYCHMALE AS PM
-INNER JOIN VWPSYCHFEMALE AS PF
-    ON PM.Gender = PF.Gender
-GO
+-- USE UNION TO JOIN VWPSYCHMALE AND VWPSYCHFEMALE
+SELECT *
+FROM VWPSYCHFEMALE
+UNION
+SELECT *
+FROM VWPSYCHMALE
+
 
 
 
