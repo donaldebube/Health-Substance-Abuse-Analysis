@@ -784,8 +784,24 @@ INNER JOIN VWSUDXMALE AS SM
 GO
 
 
+-- SUDx by Age Range (Adult)
+-- CREATE VIEW
+CREATE VIEW VWSUDXAdult
+AS    
+    SELECT DISTINCT MHDx, COUNT([Age Range]) AS [Adult Count]
+    FROM SubstanceAbuseProgramme
+    WHERE [Age Range] = 'Adult'
+    GROUP BY SUDx
+GO
 
 
+
+
+
+
+
+SELECT DISTINCT [Age Range]
+FROM SubstanceAbuseProgramme
 
 SELECT *
 FROM SubstanceAbuseProgramme
