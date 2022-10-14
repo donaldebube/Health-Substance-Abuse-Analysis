@@ -938,6 +938,8 @@ SELECT *
 FROM VWSUDXWhitenonHispanic
 GO
 
+-- JOIN 
+
 
 
 
