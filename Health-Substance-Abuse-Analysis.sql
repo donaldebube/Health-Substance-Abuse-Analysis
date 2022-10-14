@@ -939,11 +939,17 @@ FROM VWSUDXWhitenonHispanic
 GO
 
 -- JOIN VWSUDXWhitenonHispanic, VWSUDXOther, VWSUDXNativeAmerican, VWSUDXHispanicorLatino, VWSUDXAfricanAmerican
-
-
-
-
-
+SELECT *
+FROM VWSUDXWhitenonHispanic AS SW
+INNER JOIN VWSUDXOther AS SO
+    ON SW.SUDx = SO.SUDx
+INNER JOIN VWSUDXNativeAmerican AS SN
+    ON SW.SUDx = SN.SUDx
+INNER JOIN VWSUDXHispanicorLatino AS SH
+    ON SW.SUDx = SH.SUDx
+INNER JOIN VWSUDXAfricanAmerican AS SA
+    ON SW.SUDx = SA.SUDx
+GO
 
 
 
