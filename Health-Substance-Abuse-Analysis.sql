@@ -745,14 +745,21 @@ GO
 -- For SUDx
 SELECT DISTINCT [SUDx]
 FROM SubstanceAbuseProgramme
+GO
 
 -- SUDx by Gender (Male)
 -- CREATE VIEW
-SELECT SUDx, COUNT(Gender)
-FROM SubstanceAbuseProgramme
-WHERE Gender = 'Male'
-GROUP BY SUDx
+CREATE VIEW VWSUDXMALE
+AS  
+    SELECT SUDx, COUNT(Gender) AS [Male Count]
+    FROM SubstanceAbuseProgramme
+    WHERE Gender = 'Male'
+    GROUP BY SUDx
+GO
 
+-- Run VWSUDXMALE
+SELECT *
+FROM VWSUDXMALE
 
 
 
