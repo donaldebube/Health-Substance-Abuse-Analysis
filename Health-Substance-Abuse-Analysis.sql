@@ -1010,7 +1010,9 @@ SELECT DISTINCT
     MIN(DLA1) AS [Minimum DLA1],
     MIN(DLA2) AS [Minimum DLA2], 
     MAX(DLA1) AS [Maximum DLA1], 
-    MAX(DLA2) AS [Maximum DLA2]
+    MAX(DLA2) AS [Maximum DLA2],
+    AVG(DLA1) AS [Average DLA1],
+    AVG(DLA2) AS [Average DLA2]
 FROM SubstanceAbuseProgramme
 GROUP BY [Admission Date]
 
