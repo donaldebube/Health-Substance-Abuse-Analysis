@@ -883,17 +883,17 @@ FROM VWSUDXAfricanAmerican
 GO
 
 -- Create VIEW for the Hispanic or Latino Count
-CREATE VIEW VWMHDXHispanicorLatino
+CREATE VIEW VWSUDXHispanicorLatino
 AS
-    SELECT MHDx, COUNT([Race Ethnicity]) AS [Hispanic or Latino Count]
+    SELECT SUDx, COUNT([Race Ethnicity]) AS [Hispanic or Latino Count]
     FROM SubstanceAbuseProgramme
     WHERE [Race Ethnicity] = 'Hispanic or Latino'
-    GROUP BY MHDx
+    GROUP BY SUDx
 GO
 
--- Run VWMHDXHispanicorLatino
+-- Run VWSUDXHispanicorLatino
 SELECT *
-FROM VWMHDXHispanicorLatino
+FROM VWSUDXHispanicorLatino
 GO
 
 -- Create VIEW for the Hispanic or Latino Count
