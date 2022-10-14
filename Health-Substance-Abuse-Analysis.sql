@@ -741,10 +741,12 @@ GO
 
 
 
--- NOTE: DO MDHX BY RACE ETHNICITY AND PROGRAM NEXT
+
+-- For SUDx
 
 
-
+SELECT DISTINCT [Psych Admit]
+FROM SubstanceAbuseProgramme
 
 
 
