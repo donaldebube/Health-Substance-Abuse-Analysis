@@ -1004,6 +1004,15 @@ FROM VWPSYCHMALE
 UNION
 
 
+-- Maximum and Minimum DLA1 and DLA2 each day of each month
+SELECT DISTINCT 
+    [Admission Date], 
+    MIN(DLA1) AS [Minimum DLA1],
+    MIN(DLA2) AS [Minimum DLA2], 
+    MAX(DLA1) AS [Maximum DLA1], 
+    MAX(DLA2) AS [Maximum DLA2]
+FROM SubstanceAbuseProgramme
+GROUP BY [Admission Date]
 
 
 
