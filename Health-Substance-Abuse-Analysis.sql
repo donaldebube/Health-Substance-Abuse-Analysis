@@ -761,6 +761,15 @@ GO
 SELECT *
 FROM VWSUDXMALE
 
+-- CREATE VIEW
+CREATE VIEW VWSUDXMALE
+AS  
+    SELECT SUDx, COUNT(Gender) AS [Male Count]
+    FROM SubstanceAbuseProgramme
+    WHERE Gender = 'Male'
+    GROUP BY SUDx
+GO
+
 
 
 
