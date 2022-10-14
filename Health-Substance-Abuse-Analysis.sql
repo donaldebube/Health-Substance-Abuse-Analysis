@@ -814,7 +814,7 @@ SELECT *
 FROM VWSUDXSeniorCitizen
 GO
 
--- SUDx by Age Range (Senior Citizen)
+-- SUDx by Age Range (Teenager)
 -- CREATE VIEW
 CREATE VIEW VWSUDXTeenager
 AS    
@@ -844,9 +844,16 @@ SELECT *
 FROM VWSUDXYoungAdult
 GO
 
-
-
-
+-- JOIN VWSUDXYoungAdult, VWSUDXTeenager, VWSUDXSeniorCitizen and VWSUDXAdult
+SELECT *
+FROM VWSUDXAdult AS SA
+INNER JOIN VWSUDXSeniorCitizen AS SC
+    ON SA.SUDx = SC.SUDx
+INNER JOIN VWSUDXTeenager AS ST
+    ON SA.SUDx = ST.SUDx
+INNER JOIN VWSUDXYoungAdult AS SY
+    ON SA.SUDx = SY.SUDx
+GO
 
 
 
