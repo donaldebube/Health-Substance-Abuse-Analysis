@@ -720,8 +720,24 @@ SELECT *
 FROM VWMHDXWhitenonHispanic
 GO
 
-
-
+-- JOIN VWMHDXWhitenonHispanic, VWMHDXOther, VWMHDXNativeAmerican, VWMHDXHispanicorLatino and VWMHDXAfricanAmerican
+SELECT 
+    WH.MHDx, 
+    WH.[White alone non-Hispanic Count],
+    O.[Other Count],
+    NA.[Native American Count],
+    HL.[Hispanic or Latino Count],
+    AA.[African American Count]
+FROM VWMHDXWhitenonHispanic AS WH
+INNER JOIN VWMHDXOther AS O
+    ON WH.MHDx = O.MHDx
+INNER JOIN VWMHDXNativeAmerican AS NA
+    ON WH.MHDx = NA.MHDx
+INNER JOIN VWMHDXHispanicorLatino AS HL
+    ON WH.MHDx = HL.MHDx
+INNER JOIN VWMHDXAfricanAmerican AS AA
+    ON WH.MHDx = AA.MHDx
+GO
 
 
 
