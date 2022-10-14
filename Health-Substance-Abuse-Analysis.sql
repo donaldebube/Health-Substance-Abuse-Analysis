@@ -938,7 +938,7 @@ SELECT *
 FROM VWSUDXWhitenonHispanic
 GO
 
--- JOIN 
+-- JOIN VWSUDXWhitenonHispanic, VWSUDXOther, VWSUDXNativeAmerican, VWSUDXHispanicorLatino, VWSUDXAfricanAmerican
 
 
 
