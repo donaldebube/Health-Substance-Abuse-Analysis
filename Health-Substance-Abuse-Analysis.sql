@@ -664,6 +664,15 @@ SELECT *
 FROM VWMHDXAfricanAmerican
 GO
 
+-- Create VIEW for the African American alone non-Hispanic Count
+CREATE VIEW VWMHDXAfricanAmerican
+AS
+    SELECT MHDx, COUNT([Race Ethnicity]) AS [African American Count]
+    FROM SubstanceAbuseProgramme
+    WHERE [Race Ethnicity] = 'African American alone non-Hispanic'
+    GROUP BY MHDx
+GO
+
 -- NOTE: DO MDHX BY RACE ETHNICITY AND PROGRAM NEXT
 
 
