@@ -959,6 +959,11 @@ GO
 
 
 
+-- Total number of Pyschiatric visits in the last year
+SELECT DISTINCT SUM([Psych Admit]) AS [Total Number of Pyschiatric Visits]
+FROM SubstanceAbuseProgramme
+
+
 
 
 
