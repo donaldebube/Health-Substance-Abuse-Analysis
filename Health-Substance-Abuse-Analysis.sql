@@ -965,7 +965,7 @@ SELECT DISTINCT SUM([Psych Admit]) AS [Total Number of Pyschiatric Admission]
 FROM SubstanceAbuseProgramme
 GO
 
--- Psych Admit by Gender
+-- Psych Admit by Gender (Male)
 -- CREATE VIEW
 CREATE VIEW VWPSYCHMALE
 AS
@@ -980,14 +980,16 @@ SELECT *
 FROM VWPSYCHMALE
 GO
 
--- Psych Admit by Gender
+-- Psych Admit by Gender (Female)
 -- CREATE VIEW
-CREATE VIEW VWPSYCHMALE
+-- CREATE VIEW
+CREATE VIEW VWPSYCHFEMALE
 AS
     SELECT Gender, SUM([Psych Admit]) AS [Male Psych Count]
     FROM SubstanceAbuseProgramme
-    WHERE Gender = 'Male'
-    GROUP 
+    WHERE Gender = 'Female'
+    GROUP BY Gender
+GO
 
 
 
