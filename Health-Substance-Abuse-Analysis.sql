@@ -760,15 +760,21 @@ GO
 -- Run VWSUDXMALE
 SELECT *
 FROM VWSUDXMALE
+GO
 
+-- SUDx by Gender (Female)
 -- CREATE VIEW
-CREATE VIEW VWSUDXMALE
+CREATE VIEW VWSUDXFEMALE
 AS  
-    SELECT SUDx, COUNT(Gender) AS [Male Count]
+    SELECT SUDx, COUNT(Gender) AS [Female Count]
     FROM SubstanceAbuseProgramme
-    WHERE Gender = 'Male'
+    WHERE Gender = 'Female'
     GROUP BY SUDx
 GO
+
+-- RUN VWSUDXFEMALE
+SELECT *
+FROM VWSUDXFEMALE
 
 
 
