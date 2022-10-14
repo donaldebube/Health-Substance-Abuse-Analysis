@@ -862,6 +862,98 @@ GO
 
 
 
+-- SUDx By Race Ethnicity
+SELECT DISTINCT [Race Ethnicity]
+FROM SubstanceAbuseProgramme
+GO
+
+-- SUDX By Race Ethnicity (African American alone non-Hispanic)
+-- Create VIEW for the African American alone non-Hispanic Count
+CREATE VIEW VWSUDXAfricanAmerican
+AS
+    SELECT SUDX, COUNT([Race Ethnicity]) AS [African American Count]
+    FROM SubstanceAbuseProgramme
+    WHERE [Race Ethnicity] = 'African American alone non-Hispanic'
+    GROUP BY SUDX
+GO
+
+-- Run VWSUDXfricanAmerican
+SELECT *
+FROM VWSUDXAfricanAmerican
+GO
+
+-- Create VIEW for the Hispanic or Latino Count
+CREATE VIEW VWMHDXHispanicorLatino
+AS
+    SELECT MHDx, COUNT([Race Ethnicity]) AS [Hispanic or Latino Count]
+    FROM SubstanceAbuseProgramme
+    WHERE [Race Ethnicity] = 'Hispanic or Latino'
+    GROUP BY MHDx
+GO
+
+-- Run VWMHDXHispanicorLatino
+SELECT *
+FROM VWMHDXHispanicorLatino
+GO
+
+-- Create VIEW for the Hispanic or Latino Count
+CREATE VIEW VWMHDXNativeAmerican
+AS
+    SELECT MHDx, COUNT([Race Ethnicity]) AS [Native American Count]
+    FROM SubstanceAbuseProgramme
+    WHERE [Race Ethnicity] = 'Native American'
+    GROUP BY MHDx
+GO
+
+-- Run VWMHDXNativeAmerican
+SELECT *
+FROM VWMHDXNativeAmerican
+GO
+
+-- Create VIEW for the Other Count
+CREATE VIEW VWMHDXOther
+AS
+    SELECT MHDx, COUNT([Race Ethnicity]) AS [Other Count]
+    FROM SubstanceAbuseProgramme
+    WHERE [Race Ethnicity] = 'Other'
+    GROUP BY MHDx
+GO
+
+-- Run VWMHDXOther
+SELECT *
+FROM VWMHDXOther
+GO
+
+-- Create VIEW for the White alone non-Hispanic Count
+CREATE VIEW VWMHDXWhitenonHispanic
+AS
+    SELECT MHDx, COUNT([Race Ethnicity]) AS [White alone non-Hispanic Count]
+    FROM SubstanceAbuseProgramme
+    WHERE [Race Ethnicity] = 'White alone non-Hispanic'
+    GROUP BY MHDx
+GO
+
+-- Run VWMHDXWhitenonHispanic
+SELECT *
+FROM VWMHDXWhitenonHispanic
+GO
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 SELECT DISTINCT [Age Range]
 FROM SubstanceAbuseProgramme
