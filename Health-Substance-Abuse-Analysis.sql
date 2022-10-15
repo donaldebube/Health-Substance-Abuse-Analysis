@@ -1171,6 +1171,20 @@ GO
 SELECT *
 FROM VWPSYCHHispanicLatino
 
+-- Psych Admit by Race Ethnicity (Hispanic or Latino)
+-- CREATE VIEW
+CREATE VIEW VWPSYCHHispanicLatino
+AS
+    SELECT [Race Ethnicity], COUNT([Psych Admit]) AS [Psych Count]
+    FROM SubstanceAbuseProgramme
+    WHERE [Race Ethnicity] = 'Hispanic or Latino' AND [Psych Admit] <> 0
+    GROUP BY [Race Ethnicity]
+GO
+
+-- RUN VWPSYCHHispanicLatino
+SELECT *
+FROM VWPSYCHHispanicLatino
+
 
 -- Maximum and Minimum DLA1 and DLA2 each day of each month
 SELECT DISTINCT 
