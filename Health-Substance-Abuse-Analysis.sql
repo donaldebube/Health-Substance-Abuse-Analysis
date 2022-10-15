@@ -1182,9 +1182,9 @@ AS
     GROUP BY [Race Ethnicity]
 GO
 
--- RUN VWPSYCHHispanicLatino
+-- RUN VWPSYCHNativeAmerican
 SELECT *
-FROM VWPSYCHHispanicLatino
+FROM VWPSYCHNativeAmerican
 
 
 -- Maximum and Minimum DLA1 and DLA2 each day of each month
