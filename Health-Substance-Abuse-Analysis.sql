@@ -1156,7 +1156,19 @@ GO
 SELECT *
 FROM VWPSYCHAFRICANAMERICAN
 
+-- Psych Admit by Race Ethnicity (African American alone non-Hispanic)
+-- CREATE VIEW
+CREATE VIEW VWPSYCHAFRICANAMERICAN
+AS
+    SELECT [Race Ethnicity], COUNT([Psych Admit]) AS [Psych Count]
+    FROM SubstanceAbuseProgramme
+    WHERE [Race Ethnicity] = 'African American alone non-Hispanic' AND [Psych Admit] <> 0
+    GROUP BY [Race Ethnicity]
+GO
 
+-- RUN VWPSYCHAFRICANAMERICAN
+SELECT *
+FROM VWPSYCHAFRICANAMERICAN
 
 
 -- Maximum and Minimum DLA1 and DLA2 each day of each month
