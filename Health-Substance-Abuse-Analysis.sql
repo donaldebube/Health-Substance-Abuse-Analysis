@@ -1,9 +1,4 @@
-SELECT *
-FROM SubstanceAbuseProgramme
-
-SELECT CONVERT(DATE, [Admission Date]), MONTH([Admission Date]), DATENAME(MONTH, [Admission Date])
-FROM SubstanceAbuseProgramme
-GO
+-- Health Substance Abuse Analysis Case Study
 
 -- Clean the data
 
