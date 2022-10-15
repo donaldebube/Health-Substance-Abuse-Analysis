@@ -1172,13 +1172,13 @@ SELECT *
 FROM VWPSYCHHispanicLatino
 GO
 
--- Psych Admit by Race Ethnicity (Hispanic or Latino)
+-- Psych Admit by Race Ethnicity (Native American)
 -- CREATE VIEW
-CREATE VIEW VWPSYCHHispanicLatino
+CREATE VIEW VWPSYCHNativeAmerican
 AS
     SELECT [Race Ethnicity], COUNT([Psych Admit]) AS [Psych Count]
     FROM SubstanceAbuseProgramme
-    WHERE [Race Ethnicity] = 'Hispanic or Latino' AND [Psych Admit] <> 0
+    WHERE [Race Ethnicity] = 'Native American' AND [Psych Admit] <> 0
     GROUP BY [Race Ethnicity]
 GO
 
