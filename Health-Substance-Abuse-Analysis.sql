@@ -1200,6 +1200,7 @@ GO
 -- RUN VWPSYCHOther
 SELECT *
 FROM VWPSYCHOther
+GO
 
 -- Psych Admit by Race Ethnicity (Other)
 -- CREATE VIEW
