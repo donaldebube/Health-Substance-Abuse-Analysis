@@ -159,8 +159,6 @@ FROM SubstanceAbuseProgramme
 GROUP BY Program
 GO
 
-
-
 -- For Program
 
 -- Create VIEWS FOR THE FOLLOWING:
@@ -193,6 +191,7 @@ SELECT *
 FROM VWProgramFemale
 GO
 
+-- Program by Gender (4)
 -- Join the VWProgramFemale and the VWProgramMale VIEWS to create a single Table
 SELECT 
     M.Program, 
@@ -206,7 +205,6 @@ GO
 
 
 -- Create VIEWS FOR THE FOLLOWING:
-
 -- Number of both Usual Care and Intervention Patients by Race Ethnicity (African American alone non-Hispanic) 
 CREATE VIEW VWProgramByRaceEthnicityAfricanAmerican
 AS
@@ -277,7 +275,7 @@ SELECT *
 FROM VWProgramByRaceEthnicityWhitealonenonHispanic
 GO
 
-
+-- Program by Race Etnicity (5)
 -- JOIN VWProgramByRaceEthnicityWhitealonenonHispanic, VWProgramByRaceEthnicityNativeAmerican, VWProgramByRaceEthnicityHispanicorLatino and VWProgramByRaceEthnicityAfricanAmerican VIEWS
 SELECT 
     AA.Program, 
@@ -300,7 +298,6 @@ GO
 
 
 -- Create VIEWS FOR THE FOLLOWING:
-
 -- Number of both Usual Care and Intervention Patients by Age Range (Adult)
 CREATE VIEW VWProgramByAgeRangeAdult 
 AS 
@@ -360,6 +357,8 @@ SELECT *
 FROM VWProgramByAgeRangeYoungAdult
 GO
 
+
+-- Program by Age Range (6)
 -- JOIN VWProgramByAgeRangeAdult, VWProgramByAgeRangeSeniorCitizen, VWProgramByAgeRangeTeenager AND VWProgramByAgeRangeYoungAdult
 SELECT 
     A.Program,
@@ -381,16 +380,6 @@ GO
 
 
 --  For Race Ethnicity
-SELECT DISTINCT [Race Ethnicity], COUNT([Race Ethnicity]) AS [Total Count]
-FROM SubstanceAbuseProgramme
-GROUP BY [Race Ethnicity]
-
-SELECT DISTINCT [Race Ethnicity], COUNT(Gender) AS [Male Count]
-FROM SubstanceAbuseProgramme
-WHERE Gender = 'Male'
-GROUP BY [Race Ethnicity]
-GO
-
 -- Create View For Just Male Gender in the Race Ethnicity Column
 CREATE VIEW VWRaceEthnicityMale
 AS
@@ -418,6 +407,7 @@ GO
 SELECT *
 FROM VWRaceEthnicityFemale
 
+-- Race Ethnicity by Gender (7)
 -- JOIN VWRaceEthnicityFemale and VWRaceEthnicityMale
 SELECT 
     F.[Race Ethnicity], 
@@ -493,6 +483,8 @@ SELECT *
 FROM VWRaceEthnicityYoungAdult
 GO
 
+
+-- Race Etnicity by Age Range (8)
 -- JOIN VWRaceEthnicityAdult, VWRaceEthnicitySeniorCitizen, VWRaceEthnicityTeenager and VWRaceEthnicityYoungAdult VIEWS
 SELECT 
     A.[Race Ethnicity],
@@ -514,7 +506,6 @@ GO
 
 
 -- For MHDX:
--- MHDX By Gender
 -- Create VIEW for the Male Count
 CREATE VIEW VWMHDXMaleCount
 AS 
@@ -543,6 +534,7 @@ SELECT *
 FROM VWMHDXFemaleCount
 GO
 
+-- MHDX By Gender (9)
 -- JOIN VWMHDXMaleCount and VWMHDXFemaleCount
 SELECT 
     MC.MHDx, 
@@ -554,9 +546,6 @@ INNER JOIN VWMHDXFemaleCount AS FC
     ON MC.MHDx = FC.MHDx
 GO
 
-SELECT DISTINCT [Age Range]
-FROM SubstanceAbuseProgramme
-GO
 
 -- MHDX By Age Range (Adult)
 -- Create VIEW for the Adult Count
@@ -618,6 +607,7 @@ SELECT *
 FROM VWMHDXYoungAdult
 GO
 
+-- MHDX By Age Range (10)
 -- JOIN VWMHDXAdult, VWMHDXSeniorCitizen, VWMHDXTeenager and VWMHDXYoungAdult
 SELECT 
     A.MHDx, 
@@ -638,10 +628,6 @@ GO
 
 
 
--- MHDX By Race Ethnicity
-SELECT DISTINCT [Race Ethnicity]
-FROM SubstanceAbuseProgramme
-GO
 
 -- MHDX By Race Ethnicity (African American alone non-Hispanic)
 -- Create VIEW for the African American alone non-Hispanic Count
@@ -714,6 +700,8 @@ SELECT *
 FROM VWMHDXWhitenonHispanic
 GO
 
+
+-- MHDX By Race Ethnicity (11)
 -- JOIN VWMHDXWhitenonHispanic, VWMHDXOther, VWMHDXNativeAmerican, VWMHDXHispanicorLatino and VWMHDXAfricanAmerican
 SELECT 
     WH.MHDx, 
@@ -770,6 +758,8 @@ GO
 SELECT *
 FROM VWSUDXFEMALE
 
+
+-- SUDx by Gender (12)
 -- JOIN VWSUDXFEMALE and VWSUDXMALE
 SELECT SF.SUDx, SF.[Female Count], SM.[Male Count]
 FROM VWSUDXFEMALE AS SF
@@ -838,6 +828,7 @@ SELECT *
 FROM VWSUDXYoungAdult
 GO
 
+-- SUDx by Age Range (13)
 -- JOIN VWSUDXYoungAdult, VWSUDXTeenager, VWSUDXSeniorCitizen and VWSUDXAdult
 SELECT 
     SA.SUDx, 
@@ -856,10 +847,7 @@ GO
 
 
 
--- SUDx By Race Ethnicity
-SELECT DISTINCT [Race Ethnicity]
-FROM SubstanceAbuseProgramme
-GO
+
 
 -- SUDX By Race Ethnicity (African American alone non-Hispanic)
 -- Create VIEW for the African American alone non-Hispanic Count
@@ -932,6 +920,7 @@ SELECT *
 FROM VWSUDXWhitenonHispanic
 GO
 
+-- SUDx By Race Ethnicity (14)
 -- JOIN VWSUDXWhitenonHispanic, VWSUDXOther, VWSUDXNativeAmerican, VWSUDXHispanicorLatino, VWSUDXAfricanAmerican
 SELECT 
     SW.SUDx,
@@ -1010,7 +999,7 @@ SELECT *
 FROM VWPSYCHFEMALE
 GO
 
-
+-- Psych Admit by Gender (15)
 -- USE UNION TO JOIN VWPSYCHMALE AND VWPSYCHFEMALE
 SELECT *
 FROM VWPSYCHMALE
@@ -1119,6 +1108,7 @@ SELECT *
 FROM VWPSYCHYoungAdult
 GO
 
+-- Psych Admit by Age Range (16)
 -- JOIN EACH VIEW USING THE UNION SYNTAX
 SELECT *
 FROM VWPSYCHADULT
