@@ -971,7 +971,16 @@ CREATE VIEW VWPSYCHMALE
 AS
     SELECT Gender, SUM([Psych Admit]) AS [Psych Count]
     FROM SubstanceAbuseProgramme
-    WHERE Gender = 'Male'
+    WHERE Gender = 'Male' AND [Psych Admit] != 0
+    GROUP BY Gender
+GO
+
+-- To ALTER the data, do this
+ALTER VIEW VWPSYCHMALE
+AS
+    SELECT Gender, SUM([Psych Admit]) AS [Psych Count]
+    FROM SubstanceAbuseProgramme
+    WHERE Gender = 'Male' AND [Psych Admit] != 0
     GROUP BY Gender
 GO
 
@@ -990,6 +999,7 @@ AS
     GROUP BY Gender
 GO
 
+-- To ALTER the data, do this
 -- RUN VWPSYCHFEMALE
 SELECT *
 FROM VWPSYCHFEMALE
