@@ -1072,6 +1072,7 @@ GO
 -- RUN VWPSYCHTeenager
 SELECT *
 FROM VWPSYCHTeenager
+GO
 
 -- Psych Admit by Age Range (Teenager)
 -- CREATE VIEW
