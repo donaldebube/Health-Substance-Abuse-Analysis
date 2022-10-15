@@ -1187,19 +1187,19 @@ SELECT *
 FROM VWPSYCHNativeAmerican
 GO
 
--- Psych Admit by Race Ethnicity (Native American)
+-- Psych Admit by Race Ethnicity (Other)
 -- CREATE VIEW
-CREATE VIEW VWPSYCHNativeAmerican
+CREATE VIEW VWPSYCHOther
 AS
     SELECT [Race Ethnicity], COUNT([Psych Admit]) AS [Psych Count]
     FROM SubstanceAbuseProgramme
-    WHERE [Race Ethnicity] = 'Native American' AND [Psych Admit] <> 0
+    WHERE [Race Ethnicity] = 'Other' AND [Psych Admit] <> 0
     GROUP BY [Race Ethnicity]
 GO
 
--- RUN VWPSYCHNativeAmerican
+-- RUN VWPSYCHOther
 SELECT *
-FROM VWPSYCHNativeAmerican
+FROM VWPSYCHOther
 
 
 -- Maximum and Minimum DLA1 and DLA2 each day of each month
