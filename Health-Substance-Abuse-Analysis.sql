@@ -1202,13 +1202,13 @@ SELECT *
 FROM VWPSYCHOther
 GO
 
--- Psych Admit by Race Ethnicity (Other)
+-- Psych Admit by Race Ethnicity (White alone non-Hispanic)
 -- CREATE VIEW
-CREATE VIEW VWPSYCHOther
+CREATE VIEW VWPSYCHWhitealone
 AS
     SELECT [Race Ethnicity], COUNT([Psych Admit]) AS [Psych Count]
     FROM SubstanceAbuseProgramme
-    WHERE [Race Ethnicity] = 'Other' AND [Psych Admit] <> 0
+    WHERE [Race Ethnicity] = 'White alone non-Hispanic' AND [Psych Admit] <> 0
     GROUP BY [Race Ethnicity]
 GO
 
