@@ -1039,6 +1039,15 @@ AS
     GROUP BY [Age Range]
 GO
 
+-- ALTER VIEW
+ALTER VIEW VWPSYCHADULT
+AS
+    SELECT [Age Range], COUNT([Psych Admit]) AS [Adult Count]
+    FROM SubstanceAbuseProgramme
+    WHERE [Age Range] = 'Adult' AND [Psych Admit] != 0
+    GROUP BY [Age Range]
+GO
+
 -- RUN VWPSYCHADULT
 SELECT *
 FROM VWPSYCHADULT
@@ -1054,7 +1063,7 @@ AS
     GROUP BY [Age Range]
 GO
 
-
+-- ALTER VIEW
 ALTER VIEW VWPSYCHSeniorCitizen
 AS
     SELECT [Age Range], COUNT([Psych Admit]) AS [Senior Citizen Count]
@@ -1078,7 +1087,7 @@ AS
     GROUP BY [Age Range]
 GO
 
-
+-- ALTER VIEW
 ALTER VIEW VWPSYCHTeenager
 AS
     SELECT [Age Range], COUNT([Psych Admit]) AS [Psych Count]
@@ -1116,6 +1125,7 @@ SELECT *
 FROM VWPSYCHYoungAdult
 GO
 
+-- JOIN EACH VIEW USING THE UNION SYNTAX
 
 
 
