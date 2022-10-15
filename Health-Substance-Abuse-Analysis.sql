@@ -1185,6 +1185,7 @@ GO
 -- RUN VWPSYCHNativeAmerican
 SELECT *
 FROM VWPSYCHNativeAmerican
+GO
 
 -- Psych Admit by Race Ethnicity (Native American)
 -- CREATE VIEW
