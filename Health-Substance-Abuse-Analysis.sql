@@ -1,5 +1,7 @@
 -- Health Substance Abuse Analysis Case Study
 
+
+
 -- Clean the data
 
 -- Change Column names
@@ -73,6 +75,8 @@ UPDATE SubstanceAbuseProgramme
 SET 
     [Race Ethnicity] = 'White alone non-Hispanic'
 WHERE [Race Ethnicity] = 'NonHispWhite'
+
+
 
 
 
