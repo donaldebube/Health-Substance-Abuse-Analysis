@@ -1137,6 +1137,23 @@ FROM VWPSYCHTeenager
 UNION
 SELECT *
 FROM VWPSYCHYoungAdult
+GO
+
+
+
+
+-- Psych Admit by Race Ethnicity (African American alone non-Hispanic)
+-- CREATE VIEW
+CREATE VIEW VWPSYCHAFRICANAMERICAN
+AS
+    SELECT [Race Ethnicity], COUNT([Psych Admit]) AS [Psych Count]
+    FROM SubstanceAbuseProgramme
+    WHERE [Race Ethnicity] = 'African American alone non-Hispanic' AND [Psych Admit] <> 0
+    GROUP BY [Race Ethnicity]
+GO
+
+-- 
+
 
 
 
@@ -1157,7 +1174,7 @@ GO
 
 
 
-SELECT DISTINCT [Age Range]
+SELECT DISTINCT [Race Ethnicity]
 FROM SubstanceAbuseProgramme
 
 SELECT *
