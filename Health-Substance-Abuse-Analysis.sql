@@ -959,6 +959,9 @@ GO
 
 
 
+
+
+
 -- For Psych Admit
 -- Total number of Pyschiatric admissions in the last year
 SELECT DISTINCT SUM([Psych Admit]) AS [Total Number of Pyschiatric Admission]
@@ -1020,7 +1023,28 @@ FROM VWPSYCHMALE
 UNION
 SELECT*
 FROM VWPSYCHFEMALE
+GO
 
+
+
+
+
+-- Psych Admit by Age Range (Adult)
+-- CREATE VIEW
+CREATE VIEW VWPSYCHADULT
+AS
+    SELECT [Age Range], COUNT([Psych Admit]) AS [Adult Count]
+    FROM SubstanceAbuseProgramme
+    WHERE [Age Range] = 'Adult' AND [Psych Admit] != 0
+    GROUP BY [Age Range]
+GO
+
+-- RUN VWPSYCHADULT
+SELECT *
+FROM VWPSYCHADULT
+
+-- Psych Admit by Age Range (Adult)
+-- CREATE VIEW
 
 -- Maximum and Minimum DLA1 and DLA2 each day of each month
 SELECT DISTINCT 
