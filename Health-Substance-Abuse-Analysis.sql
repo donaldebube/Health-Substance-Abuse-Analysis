@@ -1214,7 +1214,7 @@ GO
 
 -- RUN VWPSYCHWhitealone
 SELECT *
-FROM VWPSYCHOther
+FROM VWPSYCHWhitealone
 
 
 
