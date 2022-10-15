@@ -1170,6 +1170,7 @@ GO
 -- RUN VWPSYCHHispanicLatino
 SELECT *
 FROM VWPSYCHHispanicLatino
+GO
 
 -- Psych Admit by Race Ethnicity (Hispanic or Latino)
 -- CREATE VIEW
