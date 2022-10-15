@@ -1074,19 +1074,20 @@ SELECT *
 FROM VWPSYCHTeenager
 GO
 
--- Psych Admit by Age Range (Teenager)
+-- Psych Admit by Age Range (Young Adult)
 -- CREATE VIEW
-CREATE VIEW VWPSYCHTeenager
+CREATE VIEW VWPSYCHYoungAdult
 AS
-    SELECT [Age Range], COUNT([Psych Admit]) AS [Teenager Count]
+    SELECT [Age Range], COUNT([Psych Admit]) AS [Young Adult Count]
     FROM SubstanceAbuseProgramme
-    WHERE [Age Range] = 'Teenager' AND [Psych Admit] != 0
+    WHERE [Age Range] = 'Young Adult' AND [Psych Admit] != 0
     GROUP BY [Age Range]
 GO
 
--- RUN VWPSYCHTeenager
+-- RUN VWPSYCHYoungAdult
 SELECT *
-FROM VWPSYCHTeenager
+FROM VWPSYCHYoungAdult
+GO
 
 -- Maximum and Minimum DLA1 and DLA2 each day of each month
 SELECT DISTINCT 
