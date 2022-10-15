@@ -1201,6 +1201,24 @@ GO
 SELECT *
 FROM VWPSYCHOther
 
+-- Psych Admit by Race Ethnicity (Other)
+-- CREATE VIEW
+CREATE VIEW VWPSYCHOther
+AS
+    SELECT [Race Ethnicity], COUNT([Psych Admit]) AS [Psych Count]
+    FROM SubstanceAbuseProgramme
+    WHERE [Race Ethnicity] = 'Other' AND [Psych Admit] <> 0
+    GROUP BY [Race Ethnicity]
+GO
+
+-- RUN VWPSYCHOther
+SELECT *
+FROM VWPSYCHOther
+
+
+
+
+
 
 -- Maximum and Minimum DLA1 and DLA2 each day of each month
 SELECT DISTINCT 
