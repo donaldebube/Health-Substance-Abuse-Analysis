@@ -133,12 +133,12 @@ FROM SubstanceAbuseProgramme
 WHERE [Age Range] IS NULL
 
 
--- Gender Count (3)
+-- Gender Count (1)
 SELECT DISTINCT Gender, COUNT(Gender) AS [Total Count]
 FROM SubstanceAbuseProgramme
 GROUP BY Gender
 
-
+-- Highest Admission Count (2)
 -- Here, we can see that the month of February had the highest number of admissions (4)
 SELECT DISTINCT 
     TOP 10 [Admission Date], 
