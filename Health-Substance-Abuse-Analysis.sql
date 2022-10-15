@@ -1212,7 +1212,7 @@ AS
     GROUP BY [Race Ethnicity]
 GO
 
--- RUN VWPSYCHOther
+-- RUN VWPSYCHWhitealone
 SELECT *
 FROM VWPSYCHOther
 
