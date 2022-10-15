@@ -138,6 +138,7 @@ SELECT DISTINCT Gender, COUNT(Gender) AS [Total Count]
 FROM SubstanceAbuseProgramme
 GROUP BY Gender
 
+
 -- Highest Admission Count (2)
 -- Here, we can see that the month of February had the highest number of admissions (4)
 SELECT DISTINCT 
@@ -151,8 +152,6 @@ ORDER BY [COUNT] DESC
 
 --  Compare different hospitalization programs.(5)
 -- What conclusion(s) can you draw from it?
-SELECT DISTINCT *
-FROM SubstanceAbuseProgramme
 
 -- Total Insight
 SELECT Program, Gender, [Age Range]
