@@ -1220,8 +1220,7 @@ FROM VWPSYCHWhitealone
 
 
 
-
--- Maximum and Minimum DLA1 and DLA2 each day of each month
+-- Maximum and Minimum DLA1 and DLA2 each day of each month (18)
 SELECT DISTINCT 
     [Admission Date], 
     MIN(DLA1) AS [Minimum DLA1],
@@ -1238,11 +1237,14 @@ GO
 
 
 
-SELECT DISTINCT [Race Ethnicity]
-FROM SubstanceAbuseProgramme
 
-SELECT *
-FROM SubstanceAbuseProgramme
+
+
+-- SELECT DISTINCT [Race Ethnicity]
+-- FROM SubstanceAbuseProgramme
+
+-- SELECT *
+-- FROM SubstanceAbuseProgramme
 
 
 -- Get the avaerage, max, min of the DLA1 and DLA2.
