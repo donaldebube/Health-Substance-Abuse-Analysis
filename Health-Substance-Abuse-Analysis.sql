@@ -150,14 +150,10 @@ GROUP BY [Admission Date]
 ORDER BY [COUNT] DESC
 
 
---  Compare different hospitalization programs.(5)
+--  Compare different hospitalization programs
 -- What conclusion(s) can you draw from it?
 
--- Total Insight
-SELECT Program, Gender, [Age Range]
-FROM SubstanceAbuseProgramme
-
--- Total Count of both Usual Care and Intervention Patients
+-- Total Count of both Usual Care and Intervention Patients (3)
 SELECT DISTINCT Program, COUNT(Program) AS [Total Count]
 FROM SubstanceAbuseProgramme
 GROUP BY Program
