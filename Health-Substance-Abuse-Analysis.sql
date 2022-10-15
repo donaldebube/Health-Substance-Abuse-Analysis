@@ -1155,18 +1155,19 @@ GO
 -- RUN VWPSYCHAFRICANAMERICAN
 SELECT *
 FROM VWPSYCHAFRICANAMERICAN
+GO
 
--- Psych Admit by Race Ethnicity (African American alone non-Hispanic)
+-- Psych Admit by Race Ethnicity (Hispanic or Latino)
 -- CREATE VIEW
-CREATE VIEW VWPSYCHAFRICANAMERICAN
+CREATE VIEW VWPSYCHHispanicLatino
 AS
     SELECT [Race Ethnicity], COUNT([Psych Admit]) AS [Psych Count]
     FROM SubstanceAbuseProgramme
-    WHERE [Race Ethnicity] = 'African American alone non-Hispanic' AND [Psych Admit] <> 0
+    WHERE [Race Ethnicity] = 'Hispanic or Latino' AND [Psych Admit] <> 0
     GROUP BY [Race Ethnicity]
 GO
 
--- RUN VWPSYCHAFRICANAMERICAN
+-- RUN VWPSYCHHispanicLatino
 SELECT *
 FROM VWPSYCHAFRICANAMERICAN
 
