@@ -1169,7 +1169,7 @@ GO
 
 -- RUN VWPSYCHHispanicLatino
 SELECT *
-FROM VWPSYCHAFRICANAMERICAN
+FROM VWPSYCHHispanicLatino
 
 
 -- Maximum and Minimum DLA1 and DLA2 each day of each month
