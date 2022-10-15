@@ -971,7 +971,7 @@ CREATE VIEW VWPSYCHMALE
 AS
     SELECT Gender, SUM([Psych Admit]) AS [Psych Count]
     FROM SubstanceAbuseProgramme
-    WHERE Gender = 'Male' AND [Psych Admit] != 0
+    WHERE Gender = 'Male' 
     GROUP BY Gender
 GO
 
@@ -1000,6 +1000,14 @@ AS
 GO
 
 -- To ALTER the data, do this
+ALTER VIEW VWPSYCHFEMALE
+AS
+    SELECT Gender, SUM([Psych Admit]) AS [Psych Count]
+    FROM SubstanceAbuseProgramme
+    WHERE Gender = 'Female' AND [Psych Admit] != 0
+    GROUP BY Gender
+GO
+
 -- RUN VWPSYCHFEMALE
 SELECT *
 FROM VWPSYCHFEMALE
@@ -1007,10 +1015,10 @@ FROM VWPSYCHFEMALE
 
 -- USE UNION TO JOIN VWPSYCHMALE AND VWPSYCHFEMALE
 SELECT *
-FROM VWPSYCHFEMALE
+FROM VWPSYCHMALE
 UNION
 SELECT *
-FROM VWPSYCHMALE
+FROM VWPSYCHFEMALE
 UNION
 
 
