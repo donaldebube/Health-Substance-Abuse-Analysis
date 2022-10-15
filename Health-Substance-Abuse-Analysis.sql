@@ -1089,6 +1089,9 @@ SELECT *
 FROM VWPSYCHYoungAdult
 GO
 
+
+
+
 -- Maximum and Minimum DLA1 and DLA2 each day of each month
 SELECT DISTINCT 
     [Admission Date], 
