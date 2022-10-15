@@ -1084,6 +1084,15 @@ AS
     GROUP BY [Age Range]
 GO
 
+-- ALTER VIEW
+ALTER VIEW VWPSYCHYoungAdult
+AS
+    SELECT [Age Range], COUNT([Psych Admit]) AS [Psych Count]
+    FROM SubstanceAbuseProgramme
+    WHERE [Age Range] = 'Young Adult' AND [Psych Admit] != 0
+    GROUP BY [Age Range]
+GO
+
 -- RUN VWPSYCHYoungAdult
 SELECT *
 FROM VWPSYCHYoungAdult
