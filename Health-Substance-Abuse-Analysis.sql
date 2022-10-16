@@ -1256,14 +1256,14 @@ GO
 
 
 
--- SELECT DISTINCT TOP 10 [Admission Date], DATENAME(MONTH, ([Admission Date])) AS MONTH, COUNT([Admission Date]) AS COUNT
--- FROM SubstanceAbuseProgramme
--- GROUP BY [Admission Date]
--- HAVING 
---     DATENAME(MONTH, ([Admission Date])) = 'January' OR 
---     DATENAME(MONTH, ([Admission Date])) = 'February' OR
---     DATENAME(MONTH, ([Admission Date])) = 'March'
--- ORDER BY [COUNT] DESC
+SELECT DISTINCT TOP 10 [Admission Date], DATENAME(MONTH, ([Admission Date])) AS MONTH, COUNT([Admission Date]) AS COUNT
+FROM SubstanceAbuseProgramme
+GROUP BY [Admission Date]
+HAVING 
+    DATENAME(MONTH, ([Admission Date])) = 'January' OR 
+    DATENAME(MONTH, ([Admission Date])) = 'February' OR
+    DATENAME(MONTH, ([Admission Date])) = 'March'
+ORDER BY [COUNT] DESC
 
 
 
