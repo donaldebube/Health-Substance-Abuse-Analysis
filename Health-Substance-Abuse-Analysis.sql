@@ -1243,8 +1243,8 @@ GO
 SELECT DISTINCT [Race Ethnicity]
 FROM SubstanceAbuseProgramme
 
--- SELECT *
--- FROM SubstanceAbuseProgramme
+SELECT *
+FROM SubstanceAbuseProgramme
 
 
 -- Get the avaerage, max, min of the DLA1 and DLA2.
