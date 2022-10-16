@@ -1240,8 +1240,8 @@ GO
 
 
 
--- SELECT DISTINCT [Race Ethnicity]
--- FROM SubstanceAbuseProgramme
+SELECT DISTINCT [Race Ethnicity]
+FROM SubstanceAbuseProgramme
 
 -- SELECT *
 -- FROM SubstanceAbuseProgramme
