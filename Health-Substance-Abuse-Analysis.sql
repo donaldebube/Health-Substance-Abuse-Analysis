@@ -607,7 +607,7 @@ SELECT *
 FROM VWMHDXYoungAdult
 GO
 
--- MHDX By Age Range (10)
+-- MHDx By Age Range (10)
 -- JOIN VWMHDXAdult, VWMHDXSeniorCitizen, VWMHDXTeenager and VWMHDXYoungAdult
 SELECT 
     A.MHDx, 
