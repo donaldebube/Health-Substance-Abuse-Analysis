@@ -275,7 +275,7 @@ SELECT *
 FROM VWProgramByRaceEthnicityWhitealonenonHispanic
 GO
 
--- Program by Race Etnicity (5)
+-- Program by Race Ethnicity (5)
 -- JOIN VWProgramByRaceEthnicityWhitealonenonHispanic, VWProgramByRaceEthnicityNativeAmerican, VWProgramByRaceEthnicityHispanicorLatino and VWProgramByRaceEthnicityAfricanAmerican VIEWS
 SELECT 
     AA.Program, 
@@ -484,7 +484,7 @@ FROM VWRaceEthnicityYoungAdult
 GO
 
 
--- Race Etnicity by Age Range (8)
+-- Race Ethnicity by Age Range (8)
 -- JOIN VWRaceEthnicityAdult, VWRaceEthnicitySeniorCitizen, VWRaceEthnicityTeenager and VWRaceEthnicityYoungAdult VIEWS
 SELECT 
     A.[Race Ethnicity],
