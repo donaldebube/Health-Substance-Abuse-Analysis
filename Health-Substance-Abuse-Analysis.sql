@@ -701,7 +701,7 @@ FROM VWMHDXWhitenonHispanic
 GO
 
 
--- MHDX By Race Ethnicity (11)
+-- MHDx By Race Ethnicity (11)
 -- JOIN VWMHDXWhitenonHispanic, VWMHDXOther, VWMHDXNativeAmerican, VWMHDXHispanicorLatino and VWMHDXAfricanAmerican
 SELECT 
     WH.MHDx, 
