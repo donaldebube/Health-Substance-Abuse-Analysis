@@ -484,7 +484,7 @@ FROM VWRaceEthnicityYoungAdult
 GO
 
 
--- Race Ethicity by Age Range (8)
+-- Race Ethnicity by Age Range (8)
 -- JOIN VWRaceEthnicityAdult, VWRaceEthnicitySeniorCitizen, VWRaceEthnicityTeenager and VWRaceEthnicityYoungAdult VIEWS
 SELECT 
     A.[Race Ethnicity],
