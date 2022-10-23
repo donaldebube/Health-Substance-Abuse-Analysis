@@ -134,7 +134,9 @@ WHERE [Age Range] IS NULL
 
 
 -- Gender Count (1)
-SELECT DISTINCT Gender, COUNT(Gender) AS [Total Count]
+SELECT DISTINCT 
+    Gender, 
+    COUNT(Gender) AS [Total Count]
 FROM SubstanceAbuseProgramme
 GROUP BY Gender
 
