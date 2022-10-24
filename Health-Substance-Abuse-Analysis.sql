@@ -1235,7 +1235,7 @@ SELECT DISTINCT
     ROUND(AVG(DLA2), 2) AS [Average DLA2]
 FROM SubstanceAbuseProgramme
 GROUP BY [Admission Date]
-GO
+
 
 
 
